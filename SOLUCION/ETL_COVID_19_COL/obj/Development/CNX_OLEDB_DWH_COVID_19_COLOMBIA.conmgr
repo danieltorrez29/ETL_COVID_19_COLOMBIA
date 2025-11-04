@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="CNX_OLEDB_DWH_COVID_19_COLOMBIA"
+  DTS:DTSID="{A8C0E1DA-1237-4FE3-970C-86F101E949DB}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=VIVOBOOK-15\SQLSERVER;Initial Catalog=DWH_COVID_19_COLOMBIA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package-{A8C0E1DA-1237-4FE3-970C-86F101E949DB}VIVOBOOK-15\SQLSERVER.DWH_COVID_19_COLOMBIA;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
