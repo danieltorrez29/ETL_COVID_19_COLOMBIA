@@ -1,24 +1,24 @@
 <?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="11/3/2025 7:17:15 PM"
+  DTS:CreationDate="11/4/2025 3:53:29 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="VIVOBOOK-15"
   DTS:CreatorName="VIVOBOOK-15\Daniel"
-  DTS:DTSID="{9FABB83F-D843-4621-B811-F45F23CF313B}"
+  DTS:DTSID="{F39222C7-4D33-4A21-A3DA-5316A9EC617C}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5035.3"
   DTS:LocaleID="9226"
-  DTS:ObjectName="Package"
+  DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="26"
-  DTS:VersionGUID="{012FD0CC-77AF-42AC-AE5F-C10498B66D39}">
+  DTS:VersionBuild="22"
+  DTS:VersionGUID="{72861CFD-FAB8-402A-A6E7-36F514C84786}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{16519637-6058-4397-9108-878DAA3CDBFA}"
+      DTS:DTSID="{17E0C1F9-4902-4031-A23E-8280B0077B72}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="CANT_REG_REPETIDOS">
@@ -28,13 +28,13 @@
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\DFT_LOAD_DIM_UBICACION_T0"
+      DTS:refId="Package\DFT_LOAD_DIM_PERSONA_T0"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarea Flujo de datos"
-      DTS:DTSID="{EF3A47C1-43DC-4225-910D-0DB4E7F04503}"
+      DTS:DTSID="{DF13C165-AA84-4EF8-90A5-A8413B552712}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="DFT_LOAD_DIM_UBICACION_T0"
+      DTS:ObjectName="DFT_LOAD_DIM_PERSONA_T0"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -42,7 +42,7 @@
           version="1">
           <components>
             <component
-              refId="Package\DFT_LOAD_DIM_UBICACION_T0\AUD_RC_REPETIDOS"
+              refId="Package\DFT_LOAD_DIM_PERSONA_T0\AUD_RC_REPETIDOS"
               componentClassID="Microsoft.RowCount"
               contactInfo="Recuento de filas;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
               description="Cuenta las filas a medida que pasan por un flujo de datos. Por ejemplo, se usa el número de filas procesadas para determinar si deben o no realizarse operaciones de limpieza o actualizar el texto de un mensaje de correo electrónico para comunicar el estado de procesamiento."
@@ -55,7 +55,7 @@
               </properties>
               <inputs>
                 <input
-                  refId="Package\DFT_LOAD_DIM_UBICACION_T0\AUD_RC_REPETIDOS.Inputs[Entrada de Recuento de filas 1]"
+                  refId="Package\DFT_LOAD_DIM_PERSONA_T0\AUD_RC_REPETIDOS.Inputs[Entrada de Recuento de filas 1]"
                   hasSideEffects="true"
                   name="Entrada de Recuento de filas 1">
                   <externalMetadataColumns />
@@ -63,19 +63,19 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DFT_LOAD_DIM_UBICACION_T0\AUD_RC_REPETIDOS.Outputs[Salida de Recuento de filas 1]"
+                  refId="Package\DFT_LOAD_DIM_PERSONA_T0\AUD_RC_REPETIDOS.Outputs[Salida de Recuento de filas 1]"
                   name="Salida de Recuento de filas 1"
-                  synchronousInputId="Package\DFT_LOAD_DIM_UBICACION_T0\AUD_RC_REPETIDOS.Inputs[Entrada de Recuento de filas 1]">
+                  synchronousInputId="Package\DFT_LOAD_DIM_PERSONA_T0\AUD_RC_REPETIDOS.Inputs[Entrada de Recuento de filas 1]">
                   <externalMetadataColumns />
                 </output>
               </outputs>
             </component>
             <component
-              refId="Package\DFT_LOAD_DIM_UBICACION_T0\DST_OLEDB_TBL_DIM_UBICACION_T0"
+              refId="Package\DFT_LOAD_DIM_PERSONA_T0\DST_OLEDB_TBL_DIM_PERSONA_T0"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
               description="Destino de OLE DB"
-              name="DST_OLEDB_TBL_DIM_UBICACION_T0"
+              name="DST_OLEDB_TBL_DIM_PERSONA_T0"
               usesDispositions="true"
               version="4">
               <properties>
@@ -86,7 +86,7 @@
                 <property
                   dataType="System.String"
                   description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
-                  name="OpenRowset">[dbo].[TBL_DIM_UBICACION_T0]</property>
+                  name="OpenRowset">[dbo].[TBL_DIM_PERSONA_T0]</property>
                 <property
                   dataType="System.String"
                   description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
@@ -108,7 +108,7 @@
                   dataType="System.Int32"
                   description="Especifica el modo utilizado para obtener acceso a la base de datos."
                   name="AccessMode"
-                  typeConverter="AccessMode">0</property>
+                  typeConverter="AccessMode">3</property>
                 <property
                   dataType="System.Boolean"
                   description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
@@ -116,11 +116,11 @@
                 <property
                   dataType="System.Boolean"
                   description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
-                  name="FastLoadKeepNulls">false</property>
+                  name="FastLoadKeepNulls">true</property>
                 <property
                   dataType="System.String"
                   description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
-                  name="FastLoadOptions"></property>
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
                 <property
                   dataType="System.Int32"
                   description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
@@ -128,7 +128,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\DFT_LOAD_DIM_UBICACION_T0\DST_OLEDB_TBL_DIM_UBICACION_T0.Connections[OleDbConnection]"
+                  refId="Package\DFT_LOAD_DIM_PERSONA_T0\DST_OLEDB_TBL_DIM_PERSONA_T0.Connections[OleDbConnection]"
                   connectionManagerID="{A8C0E1DA-1237-4FE3-970C-86F101E949DB}:external"
                   connectionManagerRefId="Project.ConnectionManagers[CNX_OLEDB_DWH_COVID_19_COLOMBIA]"
                   description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
@@ -136,51 +136,61 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\DFT_LOAD_DIM_UBICACION_T0\DST_OLEDB_TBL_DIM_UBICACION_T0.Inputs[Entrada de destino de OLE DB]"
+                  refId="Package\DFT_LOAD_DIM_PERSONA_T0\DST_OLEDB_TBL_DIM_PERSONA_T0.Inputs[Entrada de destino de OLE DB]"
                   errorOrTruncationOperation="Insertar"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="Entrada de destino de OLE DB">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT_LOAD_DIM_UBICACION_T0\DST_OLEDB_TBL_DIM_UBICACION_T0.Inputs[Entrada de destino de OLE DB].Columns[DT_FECHA_CARGUE]"
+                      refId="Package\DFT_LOAD_DIM_PERSONA_T0\DST_OLEDB_TBL_DIM_PERSONA_T0.Inputs[Entrada de destino de OLE DB].Columns[DT_FECHA_CARGUE]"
                       cachedDataType="dbTimeStamp"
                       cachedName="DT_FECHA_CARGUE"
-                      externalMetadataColumnId="Package\DFT_LOAD_DIM_UBICACION_T0\DST_OLEDB_TBL_DIM_UBICACION_T0.Inputs[Entrada de destino de OLE DB].ExternalColumns[DT_FECHA_CARGUE]"
-                      lineageId="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada].Columns[DT_FECHA_CARGUE]" />
+                      externalMetadataColumnId="Package\DFT_LOAD_DIM_PERSONA_T0\DST_OLEDB_TBL_DIM_PERSONA_T0.Inputs[Entrada de destino de OLE DB].ExternalColumns[DT_FECHA_CARGUE]"
+                      lineageId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada].Columns[DT_FECHA_CARGUE]" />
                     <inputColumn
-                      refId="Package\DFT_LOAD_DIM_UBICACION_T0\DST_OLEDB_TBL_DIM_UBICACION_T0.Inputs[Entrada de destino de OLE DB].Columns[NOMBRE_DEPARTAMENTO]"
+                      refId="Package\DFT_LOAD_DIM_PERSONA_T0\DST_OLEDB_TBL_DIM_PERSONA_T0.Inputs[Entrada de destino de OLE DB].Columns[EDAD]"
+                      cachedDataType="ui1"
+                      cachedName="EDAD"
+                      externalMetadataColumnId="Package\DFT_LOAD_DIM_PERSONA_T0\DST_OLEDB_TBL_DIM_PERSONA_T0.Inputs[Entrada de destino de OLE DB].ExternalColumns[INT_EDAD]"
+                      lineageId="Package\DFT_LOAD_DIM_PERSONA_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[EDAD]" />
+                    <inputColumn
+                      refId="Package\DFT_LOAD_DIM_PERSONA_T0\DST_OLEDB_TBL_DIM_PERSONA_T0.Inputs[Entrada de destino de OLE DB].Columns[SEXO]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="SEXO"
+                      externalMetadataColumnId="Package\DFT_LOAD_DIM_PERSONA_T0\DST_OLEDB_TBL_DIM_PERSONA_T0.Inputs[Entrada de destino de OLE DB].ExternalColumns[CHR_SEXO]"
+                      lineageId="Package\DFT_LOAD_DIM_PERSONA_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[SEXO]" />
+                    <inputColumn
+                      refId="Package\DFT_LOAD_DIM_PERSONA_T0\DST_OLEDB_TBL_DIM_PERSONA_T0.Inputs[Entrada de destino de OLE DB].Columns[CONV_CATEGORIA_EDAD]"
                       cachedDataType="wstr"
                       cachedLength="50"
-                      cachedName="NOMBRE_DEPARTAMENTO"
-                      externalMetadataColumnId="Package\DFT_LOAD_DIM_UBICACION_T0\DST_OLEDB_TBL_DIM_UBICACION_T0.Inputs[Entrada de destino de OLE DB].ExternalColumns[STR_DEPARTAMENTO]"
-                      lineageId="Package\DFT_LOAD_DIM_UBICACION_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[NOMBRE_DEPARTAMENTO]" />
-                    <inputColumn
-                      refId="Package\DFT_LOAD_DIM_UBICACION_T0\DST_OLEDB_TBL_DIM_UBICACION_T0.Inputs[Entrada de destino de OLE DB].Columns[NOMBRE_MUNICIPIO]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="NOMBRE_MUNICIPIO"
-                      externalMetadataColumnId="Package\DFT_LOAD_DIM_UBICACION_T0\DST_OLEDB_TBL_DIM_UBICACION_T0.Inputs[Entrada de destino de OLE DB].ExternalColumns[STR_MUNICIPIO]"
-                      lineageId="Package\DFT_LOAD_DIM_UBICACION_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[NOMBRE_MUNICIPIO]" />
+                      cachedName="CONV_CATEGORIA_EDAD"
+                      externalMetadataColumnId="Package\DFT_LOAD_DIM_PERSONA_T0\DST_OLEDB_TBL_DIM_PERSONA_T0.Inputs[Entrada de destino de OLE DB].ExternalColumns[STR_CATEGORIA_EDAD]"
+                      lineageId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CAST_CATEGORIA_EDAD.Outputs[Salida de columna derivada].Columns[CONV_CATEGORIA_EDAD]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\DFT_LOAD_DIM_UBICACION_T0\DST_OLEDB_TBL_DIM_UBICACION_T0.Inputs[Entrada de destino de OLE DB].ExternalColumns[SK_DIM_UBICACION]"
+                      refId="Package\DFT_LOAD_DIM_PERSONA_T0\DST_OLEDB_TBL_DIM_PERSONA_T0.Inputs[Entrada de destino de OLE DB].ExternalColumns[SK_DIM_PERSONA]"
                       dataType="i4"
-                      name="SK_DIM_UBICACION" />
+                      name="SK_DIM_PERSONA" />
                     <externalMetadataColumn
-                      refId="Package\DFT_LOAD_DIM_UBICACION_T0\DST_OLEDB_TBL_DIM_UBICACION_T0.Inputs[Entrada de destino de OLE DB].ExternalColumns[STR_DEPARTAMENTO]"
+                      refId="Package\DFT_LOAD_DIM_PERSONA_T0\DST_OLEDB_TBL_DIM_PERSONA_T0.Inputs[Entrada de destino de OLE DB].ExternalColumns[INT_EDAD]"
+                      dataType="ui1"
+                      name="INT_EDAD" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_LOAD_DIM_PERSONA_T0\DST_OLEDB_TBL_DIM_PERSONA_T0.Inputs[Entrada de destino de OLE DB].ExternalColumns[STR_CATEGORIA_EDAD]"
                       dataType="wstr"
                       length="50"
-                      name="STR_DEPARTAMENTO" />
+                      name="STR_CATEGORIA_EDAD" />
                     <externalMetadataColumn
-                      refId="Package\DFT_LOAD_DIM_UBICACION_T0\DST_OLEDB_TBL_DIM_UBICACION_T0.Inputs[Entrada de destino de OLE DB].ExternalColumns[STR_MUNICIPIO]"
+                      refId="Package\DFT_LOAD_DIM_PERSONA_T0\DST_OLEDB_TBL_DIM_PERSONA_T0.Inputs[Entrada de destino de OLE DB].ExternalColumns[CHR_SEXO]"
                       dataType="wstr"
-                      length="50"
-                      name="STR_MUNICIPIO" />
+                      length="10"
+                      name="CHR_SEXO" />
                     <externalMetadataColumn
-                      refId="Package\DFT_LOAD_DIM_UBICACION_T0\DST_OLEDB_TBL_DIM_UBICACION_T0.Inputs[Entrada de destino de OLE DB].ExternalColumns[DT_FECHA_CARGUE]"
+                      refId="Package\DFT_LOAD_DIM_PERSONA_T0\DST_OLEDB_TBL_DIM_PERSONA_T0.Inputs[Entrada de destino de OLE DB].ExternalColumns[DT_FECHA_CARGUE]"
                       dataType="dbTimeStamp"
                       name="DT_FECHA_CARGUE" />
                   </externalMetadataColumns>
@@ -188,22 +198,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DFT_LOAD_DIM_UBICACION_T0\DST_OLEDB_TBL_DIM_UBICACION_T0.Outputs[Salida de error de destino de OLE DB]"
+                  refId="Package\DFT_LOAD_DIM_PERSONA_T0\DST_OLEDB_TBL_DIM_PERSONA_T0.Outputs[Salida de error de destino de OLE DB]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Salida de error de destino de OLE DB"
-                  synchronousInputId="Package\DFT_LOAD_DIM_UBICACION_T0\DST_OLEDB_TBL_DIM_UBICACION_T0.Inputs[Entrada de destino de OLE DB]">
+                  synchronousInputId="Package\DFT_LOAD_DIM_PERSONA_T0\DST_OLEDB_TBL_DIM_PERSONA_T0.Inputs[Entrada de destino de OLE DB]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT_LOAD_DIM_UBICACION_T0\DST_OLEDB_TBL_DIM_UBICACION_T0.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      refId="Package\DFT_LOAD_DIM_PERSONA_T0\DST_OLEDB_TBL_DIM_PERSONA_T0.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DFT_LOAD_DIM_UBICACION_T0\DST_OLEDB_TBL_DIM_UBICACION_T0.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      lineageId="Package\DFT_LOAD_DIM_PERSONA_T0\DST_OLEDB_TBL_DIM_PERSONA_T0.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DFT_LOAD_DIM_UBICACION_T0\DST_OLEDB_TBL_DIM_UBICACION_T0.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      refId="Package\DFT_LOAD_DIM_PERSONA_T0\DST_OLEDB_TBL_DIM_PERSONA_T0.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DFT_LOAD_DIM_UBICACION_T0\DST_OLEDB_TBL_DIM_UBICACION_T0.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      lineageId="Package\DFT_LOAD_DIM_PERSONA_T0\DST_OLEDB_TBL_DIM_PERSONA_T0.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -212,11 +222,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\DFT_LOAD_DIM_UBICACION_T0\LKP_DIM_UBICACION_T0"
+              refId="Package\DFT_LOAD_DIM_PERSONA_T0\LKP_DIM_PERSONA_T0"
               componentClassID="Microsoft.Lookup"
               contactInfo="Búsqueda;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;6"
               description="Combina columnas adicionales con el flujo de datos mediante la búsqueda de valores en una tabla. Por ejemplo, se combina la columna 'id. de empleado' con la tabla de empleados para obtener la 'fecha de contratación' y 'el nombre de empleado'. Se recomienda esta transformación cuando hay suficiente espacio en memoria para la tabla de búsqueda."
-              name="LKP_DIM_UBICACION_T0"
+              name="LKP_DIM_PERSONA_T0"
               usesDispositions="true"
               version="6">
               <properties>
@@ -225,15 +235,15 @@
                   description="Especifica la instrucción SQL que genera la tabla de búsqueda."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT SK_DIM_UBICACION, CONCAT(STR_DEPARTAMENTO, STR_MUNICIPIO) LLAVE_INSERT_D
- FROM dbo.TBL_DIM_UBICACION_T0;</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT SK_DIM_PERSONA, CONCAT(INT_EDAD, STR_CATEGORIA_EDAD, CHR_SEXO) LLAVE_INSERT_D
+FROM dbo.TBL_DIM_PERSONA_T0;</property>
                 <property
                   dataType="System.String"
                   description="Especifica una instrucción SQL que usa parámetros para generar la tabla de búsqueda."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT SK_DIM_UBICACION, CONCAT(STR_DEPARTAMENTO, STR_MUNICIPIO) LLAVE_INSERT_D
- FROM dbo.TBL_DIM_UBICACION_T0;) [refTable]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT SK_DIM_PERSONA, CONCAT(INT_EDAD, STR_CATEGORIA_EDAD, CHR_SEXO) LLAVE_INSERT_D
+FROM dbo.TBL_DIM_PERSONA_T0;) [refTable]
 where [refTable].[LLAVE_INSERT_D] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -265,12 +275,12 @@ where [refTable].[LLAVE_INSERT_D] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indica si se debe hacer referencia a metadatos en formato XML."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="SK_DIM_UBICACION" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="LLAVE_INSERT_D" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="SK_DIM_PERSONA" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="LLAVE_INSERT_D" dataType="DT_WSTR" length="64" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
                   description="Especifica la lista de identificadores de linaje que están asignados a los parámetros que usa la instrucción SQL de la propiedad SQLCommand. Las entradas de la lista están separadas por puntos y comas."
-                  name="ParameterMap">#{Package\DFT_LOAD_DIM_UBICACION_T0\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada].Columns[LLAVE_INSERT]};</property>
+                  name="ParameterMap">#{Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada].Columns[LLAVE_INSERT]};</property>
                 <property
                   dataType="System.Int32"
                   description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
@@ -282,7 +292,7 @@ where [refTable].[LLAVE_INSERT_D] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\DFT_LOAD_DIM_UBICACION_T0\LKP_DIM_UBICACION_T0.Connections[OleDbConnection]"
+                  refId="Package\DFT_LOAD_DIM_PERSONA_T0\LKP_DIM_PERSONA_T0.Connections[OleDbConnection]"
                   connectionManagerID="{A8C0E1DA-1237-4FE3-970C-86F101E949DB}:external"
                   connectionManagerRefId="Project.ConnectionManagers[CNX_OLEDB_DWH_COVID_19_COLOMBIA]"
                   description="Administrador de conexiones utilizado para obtener acceso a los datos de búsqueda."
@@ -290,15 +300,15 @@ where [refTable].[LLAVE_INSERT_D] = ?</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\DFT_LOAD_DIM_UBICACION_T0\LKP_DIM_UBICACION_T0.Inputs[Entrada de búsqueda]"
+                  refId="Package\DFT_LOAD_DIM_PERSONA_T0\LKP_DIM_PERSONA_T0.Inputs[Entrada de búsqueda]"
                   name="Entrada de búsqueda">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT_LOAD_DIM_UBICACION_T0\LKP_DIM_UBICACION_T0.Inputs[Entrada de búsqueda].Columns[LLAVE_INSERT]"
+                      refId="Package\DFT_LOAD_DIM_PERSONA_T0\LKP_DIM_PERSONA_T0.Inputs[Entrada de búsqueda].Columns[LLAVE_INSERT]"
                       cachedDataType="wstr"
-                      cachedLength="100"
+                      cachedLength="50"
                       cachedName="LLAVE_INSERT"
-                      lineageId="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada].Columns[LLAVE_INSERT]">
+                      lineageId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada].Columns[LLAVE_INSERT]">
                       <properties>
                         <property
                           dataType="System.String"
@@ -316,55 +326,55 @@ where [refTable].[LLAVE_INSERT_D] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DFT_LOAD_DIM_UBICACION_T0\LKP_DIM_UBICACION_T0.Outputs[Salida de entradas coincidentes de búsqueda]"
+                  refId="Package\DFT_LOAD_DIM_PERSONA_T0\LKP_DIM_PERSONA_T0.Outputs[Salida de entradas coincidentes de búsqueda]"
                   errorOrTruncationOperation="Búsqueda"
                   errorRowDisposition="IgnoreFailure"
                   exclusionGroup="1"
                   name="Salida de entradas coincidentes de búsqueda"
-                  synchronousInputId="Package\DFT_LOAD_DIM_UBICACION_T0\LKP_DIM_UBICACION_T0.Inputs[Entrada de búsqueda]">
+                  synchronousInputId="Package\DFT_LOAD_DIM_PERSONA_T0\LKP_DIM_PERSONA_T0.Inputs[Entrada de búsqueda]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT_LOAD_DIM_UBICACION_T0\LKP_DIM_UBICACION_T0.Outputs[Salida de entradas coincidentes de búsqueda].Columns[SK_DIM_UBICACION]"
+                      refId="Package\DFT_LOAD_DIM_PERSONA_T0\LKP_DIM_PERSONA_T0.Outputs[Salida de entradas coincidentes de búsqueda].Columns[SK_DIM_PERSONA]"
                       dataType="i4"
                       errorOrTruncationOperation="Copiar columna"
-                      lineageId="Package\DFT_LOAD_DIM_UBICACION_T0\LKP_DIM_UBICACION_T0.Outputs[Salida de entradas coincidentes de búsqueda].Columns[SK_DIM_UBICACION]"
-                      name="SK_DIM_UBICACION"
+                      lineageId="Package\DFT_LOAD_DIM_PERSONA_T0\LKP_DIM_PERSONA_T0.Outputs[Salida de entradas coincidentes de búsqueda].Columns[SK_DIM_PERSONA]"
+                      name="SK_DIM_PERSONA"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           dataType="System.String"
                           description="Especifica la columna de la tabla de referencia de la que se copia una columna."
-                          name="CopyFromReferenceColumn">SK_DIM_UBICACION</property>
+                          name="CopyFromReferenceColumn">SK_DIM_PERSONA</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\DFT_LOAD_DIM_UBICACION_T0\LKP_DIM_UBICACION_T0.Outputs[Salida de entradas no coincidentes de búsqueda]"
+                  refId="Package\DFT_LOAD_DIM_PERSONA_T0\LKP_DIM_PERSONA_T0.Outputs[Salida de entradas no coincidentes de búsqueda]"
                   description="Salida de búsqueda que trata las filas sin entradas coincidentes en el conjunto de datos de referencia. Utilice esta salida cuando la propiedad NoMatchBehavior esté establecida en 'Enviar las filas sin entradas coincidentes a la salida de entradas no coincidentes'."
                   exclusionGroup="1"
                   name="Salida de entradas no coincidentes de búsqueda"
-                  synchronousInputId="Package\DFT_LOAD_DIM_UBICACION_T0\LKP_DIM_UBICACION_T0.Inputs[Entrada de búsqueda]">
+                  synchronousInputId="Package\DFT_LOAD_DIM_PERSONA_T0\LKP_DIM_PERSONA_T0.Inputs[Entrada de búsqueda]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\DFT_LOAD_DIM_UBICACION_T0\LKP_DIM_UBICACION_T0.Outputs[Salida de error de búsqueda]"
+                  refId="Package\DFT_LOAD_DIM_PERSONA_T0\LKP_DIM_PERSONA_T0.Outputs[Salida de error de búsqueda]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Salida de error de búsqueda"
-                  synchronousInputId="Package\DFT_LOAD_DIM_UBICACION_T0\LKP_DIM_UBICACION_T0.Inputs[Entrada de búsqueda]">
+                  synchronousInputId="Package\DFT_LOAD_DIM_PERSONA_T0\LKP_DIM_PERSONA_T0.Inputs[Entrada de búsqueda]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT_LOAD_DIM_UBICACION_T0\LKP_DIM_UBICACION_T0.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      refId="Package\DFT_LOAD_DIM_PERSONA_T0\LKP_DIM_PERSONA_T0.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DFT_LOAD_DIM_UBICACION_T0\LKP_DIM_UBICACION_T0.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      lineageId="Package\DFT_LOAD_DIM_PERSONA_T0\LKP_DIM_PERSONA_T0.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DFT_LOAD_DIM_UBICACION_T0\LKP_DIM_UBICACION_T0.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      refId="Package\DFT_LOAD_DIM_PERSONA_T0\LKP_DIM_PERSONA_T0.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DFT_LOAD_DIM_UBICACION_T0\LKP_DIM_UBICACION_T0.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      lineageId="Package\DFT_LOAD_DIM_PERSONA_T0\LKP_DIM_PERSONA_T0.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -373,7 +383,7 @@ where [refTable].[LLAVE_INSERT_D] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\DFT_LOAD_DIM_UBICACION_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS"
+              refId="Package\DFT_LOAD_DIM_PERSONA_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
               description="Origen de OLE DB"
@@ -397,8 +407,27 @@ where [refTable].[LLAVE_INSERT_D] = ?</property>
                   dataType="System.String"
                   description="Comando SQL para ejecutar."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DISTINCT [NOMBRE_DEPARTAMENTO] ,[NOMBRE_MUNICIPIO]
-FROM  [DWH_COVID_19_COLOMBIA].[dbo].[TBL_CASOS_POSITIVOS];</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DISTINCT 
+    EDAD,
+    CASE
+        WHEN EDAD BETWEEN 1 AND 5 THEN 'PRIMERA INFANCIA (1–5)'
+        WHEN EDAD BETWEEN 6 AND 11 THEN 'INFANCIA INTERMEDIA (6–11)'
+        WHEN EDAD BETWEEN 12 AND 14 THEN 'ADOLESCENCIA TEMPRANA (12–14)'
+        WHEN EDAD BETWEEN 15 AND 17 THEN 'ADOLESCENCIA MEDIA (15–17)'
+        WHEN EDAD BETWEEN 18 AND 20 THEN 'ADOLESCENCIA TARDÍA (18–20)'
+        WHEN EDAD BETWEEN 21 AND 24 THEN 'ADULTEZ EMERGENTE (21–24)'
+        WHEN EDAD BETWEEN 25 AND 39 THEN 'ADULTEZ JOVEN (25–39)'
+        WHEN EDAD BETWEEN 40 AND 54 THEN 'ADULTEZ MEDIA (40–54)'
+        WHEN EDAD BETWEEN 55 AND 64 THEN 'ADULTEZ MEDIA TARDÍA (55–64)'
+        WHEN EDAD BETWEEN 65 AND 74 THEN 'ADULTEZ MAYOR TEMPRANA (65–74)'
+        WHEN EDAD BETWEEN 75 AND 84 THEN 'ADULTEZ MAYOR (75–84)'
+        WHEN EDAD BETWEEN 85 AND 94 THEN 'VEJEZ AVANZADA (85–94)'
+        WHEN EDAD BETWEEN 95 AND 113 THEN 'LONGEVIDAD EXTREMA (95–113)'
+        ELSE 'FUERA DE RANGO'
+    END AS CATEGORIA_EDAD,
+	SEXO
+FROM dbo.TBL_CASOS_POSITIVOS
+ORDER BY EDAD;</property>
                 <property
                   dataType="System.String"
                   description="Variable que contiene el comando SQL para ejecutar."
@@ -423,7 +452,7 @@ FROM  [DWH_COVID_19_COLOMBIA].[dbo].[TBL_CASOS_POSITIVOS];</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\DFT_LOAD_DIM_UBICACION_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Connections[OleDbConnection]"
+                  refId="Package\DFT_LOAD_DIM_PERSONA_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Connections[OleDbConnection]"
                   connectionManagerID="{A8C0E1DA-1237-4FE3-970C-86F101E949DB}:external"
                   connectionManagerRefId="Project.ConnectionManagers[CNX_OLEDB_DWH_COVID_19_COLOMBIA]"
                   description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
@@ -431,122 +460,143 @@ FROM  [DWH_COVID_19_COLOMBIA].[dbo].[TBL_CASOS_POSITIVOS];</property>
               </connections>
               <outputs>
                 <output
-                  refId="Package\DFT_LOAD_DIM_UBICACION_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB]"
+                  refId="Package\DFT_LOAD_DIM_PERSONA_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB]"
                   name="Salida de origen de OLE DB">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT_LOAD_DIM_UBICACION_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[NOMBRE_DEPARTAMENTO]"
-                      dataType="wstr"
+                      refId="Package\DFT_LOAD_DIM_PERSONA_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[EDAD]"
+                      dataType="ui1"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DFT_LOAD_DIM_UBICACION_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].ExternalColumns[NOMBRE_DEPARTAMENTO]"
-                      length="50"
-                      lineageId="Package\DFT_LOAD_DIM_UBICACION_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[NOMBRE_DEPARTAMENTO]"
-                      name="NOMBRE_DEPARTAMENTO"
+                      externalMetadataColumnId="Package\DFT_LOAD_DIM_PERSONA_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].ExternalColumns[EDAD]"
+                      lineageId="Package\DFT_LOAD_DIM_PERSONA_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[EDAD]"
+                      name="EDAD"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\DFT_LOAD_DIM_UBICACION_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[NOMBRE_MUNICIPIO]"
+                      refId="Package\DFT_LOAD_DIM_PERSONA_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[SEXO]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DFT_LOAD_DIM_UBICACION_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].ExternalColumns[NOMBRE_MUNICIPIO]"
-                      length="50"
-                      lineageId="Package\DFT_LOAD_DIM_UBICACION_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[NOMBRE_MUNICIPIO]"
-                      name="NOMBRE_MUNICIPIO"
+                      externalMetadataColumnId="Package\DFT_LOAD_DIM_PERSONA_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].ExternalColumns[SEXO]"
+                      length="10"
+                      lineageId="Package\DFT_LOAD_DIM_PERSONA_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[SEXO]"
+                      name="SEXO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_LOAD_DIM_PERSONA_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[CATEGORIA_EDAD]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_LOAD_DIM_PERSONA_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].ExternalColumns[CATEGORIA_EDAD]"
+                      length="30"
+                      lineageId="Package\DFT_LOAD_DIM_PERSONA_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[CATEGORIA_EDAD]"
+                      name="CATEGORIA_EDAD"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\DFT_LOAD_DIM_UBICACION_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].ExternalColumns[NOMBRE_DEPARTAMENTO]"
-                      dataType="wstr"
-                      length="50"
-                      name="NOMBRE_DEPARTAMENTO" />
+                      refId="Package\DFT_LOAD_DIM_PERSONA_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].ExternalColumns[EDAD]"
+                      dataType="ui1"
+                      name="EDAD" />
                     <externalMetadataColumn
-                      refId="Package\DFT_LOAD_DIM_UBICACION_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].ExternalColumns[NOMBRE_MUNICIPIO]"
+                      refId="Package\DFT_LOAD_DIM_PERSONA_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].ExternalColumns[SEXO]"
                       dataType="wstr"
-                      length="50"
-                      name="NOMBRE_MUNICIPIO" />
+                      length="10"
+                      name="SEXO" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_LOAD_DIM_PERSONA_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].ExternalColumns[CATEGORIA_EDAD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="CATEGORIA_EDAD" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\DFT_LOAD_DIM_UBICACION_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB]"
+                  refId="Package\DFT_LOAD_DIM_PERSONA_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB]"
                   isErrorOut="true"
                   name="Salida de error de origen de OLE DB">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT_LOAD_DIM_UBICACION_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      refId="Package\DFT_LOAD_DIM_PERSONA_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DFT_LOAD_DIM_UBICACION_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      lineageId="Package\DFT_LOAD_DIM_PERSONA_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DFT_LOAD_DIM_UBICACION_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      refId="Package\DFT_LOAD_DIM_PERSONA_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[CATEGORIA_EDAD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\DFT_LOAD_DIM_PERSONA_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[CATEGORIA_EDAD]"
+                      name="CATEGORIA_EDAD" />
+                    <outputColumn
+                      refId="Package\DFT_LOAD_DIM_PERSONA_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DFT_LOAD_DIM_UBICACION_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      lineageId="Package\DFT_LOAD_DIM_PERSONA_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                     <outputColumn
-                      refId="Package\DFT_LOAD_DIM_UBICACION_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[NOMBRE_DEPARTAMENTO]"
-                      dataType="wstr"
-                      length="50"
-                      lineageId="Package\DFT_LOAD_DIM_UBICACION_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[NOMBRE_DEPARTAMENTO]"
-                      name="NOMBRE_DEPARTAMENTO" />
+                      refId="Package\DFT_LOAD_DIM_PERSONA_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[EDAD]"
+                      dataType="ui1"
+                      lineageId="Package\DFT_LOAD_DIM_PERSONA_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[EDAD]"
+                      name="EDAD" />
                     <outputColumn
-                      refId="Package\DFT_LOAD_DIM_UBICACION_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[NOMBRE_MUNICIPIO]"
+                      refId="Package\DFT_LOAD_DIM_PERSONA_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[SEXO]"
                       dataType="wstr"
-                      length="50"
-                      lineageId="Package\DFT_LOAD_DIM_UBICACION_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[NOMBRE_MUNICIPIO]"
-                      name="NOMBRE_MUNICIPIO" />
+                      length="10"
+                      lineageId="Package\DFT_LOAD_DIM_PERSONA_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[SEXO]"
+                      name="SEXO" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
               </outputs>
             </component>
             <component
-              refId="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_CS_ROUTE_DIM_UBICACION_T0"
+              refId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_CS_ROUTE_DIM_PERSONA_T0"
               componentClassID="Microsoft.ConditionalSplit"
               contactInfo="División condicional;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
               description="Enruta filas de datos a diferentes salidas según el contenido de los datos. Se usan condiciones (expresiones de SSIS) para especificar las filas que se van a enrutar. Por ejemplo, se usa para separar los registros que deben limpiarse de los registros listos para ser cargados o para enrutar solamente un subconjunto de registros."
-              name="TRF_CS_ROUTE_DIM_UBICACION_T0"
+              name="TRF_CS_ROUTE_DIM_PERSONA_T0"
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_CS_ROUTE_DIM_UBICACION_T0.Inputs[Entrada de división condicional]"
+                  refId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_CS_ROUTE_DIM_PERSONA_T0.Inputs[Entrada de división condicional]"
                   description="Entrada en la transformación División condicional"
                   name="Entrada de división condicional">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_CS_ROUTE_DIM_UBICACION_T0.Inputs[Entrada de división condicional].Columns[SK_DIM_UBICACION]"
+                      refId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_CS_ROUTE_DIM_PERSONA_T0.Inputs[Entrada de división condicional].Columns[SK_DIM_PERSONA]"
                       cachedDataType="i4"
-                      cachedName="SK_DIM_UBICACION"
-                      lineageId="Package\DFT_LOAD_DIM_UBICACION_T0\LKP_DIM_UBICACION_T0.Outputs[Salida de entradas coincidentes de búsqueda].Columns[SK_DIM_UBICACION]" />
+                      cachedName="SK_DIM_PERSONA"
+                      lineageId="Package\DFT_LOAD_DIM_PERSONA_T0\LKP_DIM_PERSONA_T0.Outputs[Salida de entradas coincidentes de búsqueda].Columns[SK_DIM_PERSONA]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_CS_ROUTE_DIM_UBICACION_T0.Outputs[NUEVO]"
+                  refId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_CS_ROUTE_DIM_PERSONA_T0.Outputs[NUEVO]"
                   description="Salida 1 de la transformación División condicional"
                   errorOrTruncationOperation="Cálculo"
                   errorRowDisposition="FailComponent"
                   exclusionGroup="1"
                   name="NUEVO"
-                  synchronousInputId="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_CS_ROUTE_DIM_UBICACION_T0.Inputs[Entrada de división condicional]"
+                  synchronousInputId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_CS_ROUTE_DIM_PERSONA_T0.Inputs[Entrada de división condicional]"
                   truncationRowDisposition="FailComponent">
                   <properties>
                     <property
                       containsID="true"
                       dataType="System.String"
                       description="Especifica la expresión. Esta versión de expresión usa identificadores de linaje en lugar de nombres de columna."
-                      name="Expression">[ISNULL](#{Package\DFT_LOAD_DIM_UBICACION_T0\LKP_DIM_UBICACION_T0.Outputs[Salida de entradas coincidentes de búsqueda].Columns[SK_DIM_UBICACION]})</property>
+                      name="Expression">[ISNULL](#{Package\DFT_LOAD_DIM_PERSONA_T0\LKP_DIM_PERSONA_T0.Outputs[Salida de entradas coincidentes de búsqueda].Columns[SK_DIM_PERSONA]})</property>
                     <property
                       containsID="true"
                       dataType="System.String"
                       description="Especifica la versión descriptiva de la expresión. Esta versión de expresión usa nombres de columna."
                       expressionType="Notify"
-                      name="FriendlyExpression">ISNULL(SK_DIM_UBICACION)</property>
+                      name="FriendlyExpression">ISNULL(SK_DIM_PERSONA)</property>
                     <property
                       dataType="System.Int32"
                       description="Especifica la posición de la condición en la lista de condiciones que evalúa la transformación. El orden de evaluación es del menor al mayor valor."
@@ -555,11 +605,11 @@ FROM  [DWH_COVID_19_COLOMBIA].[dbo].[TBL_CASOS_POSITIVOS];</property>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_CS_ROUTE_DIM_UBICACION_T0.Outputs[REPETIDO]"
+                  refId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_CS_ROUTE_DIM_PERSONA_T0.Outputs[REPETIDO]"
                   description="Salida predeterminada de la transformación División condicional"
                   exclusionGroup="1"
                   name="REPETIDO"
-                  synchronousInputId="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_CS_ROUTE_DIM_UBICACION_T0.Inputs[Entrada de división condicional]">
+                  synchronousInputId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_CS_ROUTE_DIM_PERSONA_T0.Inputs[Entrada de división condicional]">
                   <properties>
                     <property
                       dataType="System.Boolean"
@@ -568,23 +618,23 @@ FROM  [DWH_COVID_19_COLOMBIA].[dbo].[TBL_CASOS_POSITIVOS];</property>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_CS_ROUTE_DIM_UBICACION_T0.Outputs[Salida de error de división condicional]"
+                  refId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_CS_ROUTE_DIM_PERSONA_T0.Outputs[Salida de error de división condicional]"
                   description="Salida de error de la transformación División condicional"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Salida de error de división condicional"
-                  synchronousInputId="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_CS_ROUTE_DIM_UBICACION_T0.Inputs[Entrada de división condicional]">
+                  synchronousInputId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_CS_ROUTE_DIM_PERSONA_T0.Inputs[Entrada de división condicional]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_CS_ROUTE_DIM_UBICACION_T0.Outputs[Salida de error de división condicional].Columns[ErrorCode]"
+                      refId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_CS_ROUTE_DIM_PERSONA_T0.Outputs[Salida de error de división condicional].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_CS_ROUTE_DIM_UBICACION_T0.Outputs[Salida de error de división condicional].Columns[ErrorCode]"
+                      lineageId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_CS_ROUTE_DIM_PERSONA_T0.Outputs[Salida de error de división condicional].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_CS_ROUTE_DIM_UBICACION_T0.Outputs[Salida de error de división condicional].Columns[ErrorColumn]"
+                      refId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_CS_ROUTE_DIM_PERSONA_T0.Outputs[Salida de error de división condicional].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_CS_ROUTE_DIM_UBICACION_T0.Outputs[Salida de error de división condicional].Columns[ErrorColumn]"
+                      lineageId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_CS_ROUTE_DIM_PERSONA_T0.Outputs[Salida de error de división condicional].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -593,7 +643,7 @@ FROM  [DWH_COVID_19_COLOMBIA].[dbo].[TBL_CASOS_POSITIVOS];</property>
               </outputs>
             </component>
             <component
-              refId="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_DC_BK_CASTS"
+              refId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CASTS"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Columna derivada;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
               description="Crea nuevos valores de columna aplicando expresiones a las columnas de entrada de la transformación. Crea nuevas columnas o sobrescribe las columnas existentes. Por ejemplo, se concatenan los valores de las columnas 'nombre' y 'apellidos' para crear una columna 'nombre completo'."
@@ -601,40 +651,46 @@ FROM  [DWH_COVID_19_COLOMBIA].[dbo].[TBL_CASOS_POSITIVOS];</property>
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_DC_BK_CASTS.Inputs[Entrada de columna derivada]"
+                  refId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CASTS.Inputs[Entrada de columna derivada]"
                   description="Entrada en la transformación Columna derivada"
                   name="Entrada de columna derivada">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_DC_BK_CASTS.Inputs[Entrada de columna derivada].Columns[NOMBRE_DEPARTAMENTO]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="NOMBRE_DEPARTAMENTO"
-                      lineageId="Package\DFT_LOAD_DIM_UBICACION_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[NOMBRE_DEPARTAMENTO]" />
+                      refId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CASTS.Inputs[Entrada de columna derivada].Columns[EDAD]"
+                      cachedDataType="ui1"
+                      cachedName="EDAD"
+                      lineageId="Package\DFT_LOAD_DIM_PERSONA_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[EDAD]" />
                     <inputColumn
-                      refId="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_DC_BK_CASTS.Inputs[Entrada de columna derivada].Columns[NOMBRE_MUNICIPIO]"
+                      refId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CASTS.Inputs[Entrada de columna derivada].Columns[SEXO]"
                       cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="NOMBRE_MUNICIPIO"
-                      lineageId="Package\DFT_LOAD_DIM_UBICACION_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[NOMBRE_MUNICIPIO]" />
+                      cachedLength="10"
+                      cachedName="SEXO"
+                      lineageId="Package\DFT_LOAD_DIM_PERSONA_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[SEXO]" />
+                    <inputColumn
+                      refId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CASTS.Inputs[Entrada de columna derivada].Columns[CATEGORIA_EDAD]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="CATEGORIA_EDAD"
+                      lineageId="Package\DFT_LOAD_DIM_PERSONA_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[CATEGORIA_EDAD]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada]"
+                  refId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada]"
                   description="Salida predeterminada de la transformación Columna derivada"
                   exclusionGroup="1"
                   name="Salida de columna derivada"
-                  synchronousInputId="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_DC_BK_CASTS.Inputs[Entrada de columna derivada]">
+                  synchronousInputId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CASTS.Inputs[Entrada de columna derivada]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada].Columns[DT_FECHA_CARGUE]"
+                      refId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada].Columns[DT_FECHA_CARGUE]"
                       dataType="dbTimeStamp"
                       errorOrTruncationOperation="Cálculo"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada].Columns[DT_FECHA_CARGUE]"
+                      lineageId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada].Columns[DT_FECHA_CARGUE]"
                       name="DT_FECHA_CARGUE"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -652,12 +708,12 @@ FROM  [DWH_COVID_19_COLOMBIA].[dbo].[TBL_CASOS_POSITIVOS];</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada].Columns[LLAVE_INSERT]"
+                      refId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada].Columns[LLAVE_INSERT]"
                       dataType="wstr"
                       errorOrTruncationOperation="Cálculo"
                       errorRowDisposition="FailComponent"
-                      length="100"
-                      lineageId="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada].Columns[LLAVE_INSERT]"
+                      length="50"
+                      lineageId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada].Columns[LLAVE_INSERT]"
                       name="LLAVE_INSERT"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -665,36 +721,119 @@ FROM  [DWH_COVID_19_COLOMBIA].[dbo].[TBL_CASOS_POSITIVOS];</property>
                           containsID="true"
                           dataType="System.String"
                           description="Expresión de columna derivada"
-                          name="Expression">#{Package\DFT_LOAD_DIM_UBICACION_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[NOMBRE_DEPARTAMENTO]} + #{Package\DFT_LOAD_DIM_UBICACION_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[NOMBRE_MUNICIPIO]}</property>
+                          name="Expression">(DT_WSTR,10)(#{Package\DFT_LOAD_DIM_PERSONA_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[EDAD]}) + #{Package\DFT_LOAD_DIM_PERSONA_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[CATEGORIA_EDAD]} + #{Package\DFT_LOAD_DIM_PERSONA_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[SEXO]}</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Expresión descriptiva de columna derivada"
                           expressionType="Notify"
-                          name="FriendlyExpression">NOMBRE_DEPARTAMENTO + NOMBRE_MUNICIPIO</property>
+                          name="FriendlyExpression">(DT_WSTR,10)(EDAD) + CATEGORIA_EDAD + SEXO</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_DC_BK_CASTS.Outputs[Salida de error de columna derivada]"
+                  refId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CASTS.Outputs[Salida de error de columna derivada]"
                   description="Salida de error de la transformación Columna derivada"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Salida de error de columna derivada"
-                  synchronousInputId="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_DC_BK_CASTS.Inputs[Entrada de columna derivada]">
+                  synchronousInputId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CASTS.Inputs[Entrada de columna derivada]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_DC_BK_CASTS.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                      refId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CASTS.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_DC_BK_CASTS.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                      lineageId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CASTS.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_DC_BK_CASTS.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
+                      refId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CASTS.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_DC_BK_CASTS.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
+                      lineageId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CASTS.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CAST_CATEGORIA_EDAD"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Columna derivada;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Crea nuevos valores de columna aplicando expresiones a las columnas de entrada de la transformación. Crea nuevas columnas o sobrescribe las columnas existentes. Por ejemplo, se concatenan los valores de las columnas 'nombre' y 'apellidos' para crear una columna 'nombre completo'."
+              name="TRF_DC_BK_CAST_CATEGORIA_EDAD"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CAST_CATEGORIA_EDAD.Inputs[Entrada de columna derivada]"
+                  description="Entrada en la transformación Columna derivada"
+                  name="Entrada de columna derivada">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CAST_CATEGORIA_EDAD.Inputs[Entrada de columna derivada].Columns[CATEGORIA_EDAD]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="CATEGORIA_EDAD"
+                      lineageId="Package\DFT_LOAD_DIM_PERSONA_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[CATEGORIA_EDAD]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CAST_CATEGORIA_EDAD.Outputs[Salida de columna derivada]"
+                  description="Salida predeterminada de la transformación Columna derivada"
+                  exclusionGroup="1"
+                  name="Salida de columna derivada"
+                  synchronousInputId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CAST_CATEGORIA_EDAD.Inputs[Entrada de columna derivada]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CAST_CATEGORIA_EDAD.Outputs[Salida de columna derivada].Columns[CONV_CATEGORIA_EDAD]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Cálculo"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CAST_CATEGORIA_EDAD.Outputs[Salida de columna derivada].Columns[CONV_CATEGORIA_EDAD]"
+                      name="CONV_CATEGORIA_EDAD"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión de columna derivada"
+                          name="Expression">(DT_WSTR,50)#{Package\DFT_LOAD_DIM_PERSONA_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[CATEGORIA_EDAD]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión descriptiva de columna derivada"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_WSTR,50)CATEGORIA_EDAD</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CAST_CATEGORIA_EDAD.Outputs[Salida de error de columna derivada]"
+                  description="Salida de error de la transformación Columna derivada"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de columna derivada"
+                  synchronousInputId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CAST_CATEGORIA_EDAD.Inputs[Entrada de columna derivada]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CAST_CATEGORIA_EDAD.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CAST_CATEGORIA_EDAD.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CAST_CATEGORIA_EDAD.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CAST_CATEGORIA_EDAD.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -705,30 +844,35 @@ FROM  [DWH_COVID_19_COLOMBIA].[dbo].[TBL_CASOS_POSITIVOS];</property>
           </components>
           <paths>
             <path
-              refId="Package\DFT_LOAD_DIM_UBICACION_T0.Paths[NUEVO]"
-              endId="Package\DFT_LOAD_DIM_UBICACION_T0\DST_OLEDB_TBL_DIM_UBICACION_T0.Inputs[Entrada de destino de OLE DB]"
+              refId="Package\DFT_LOAD_DIM_PERSONA_T0.Paths[NUEVO]"
+              endId="Package\DFT_LOAD_DIM_PERSONA_T0\DST_OLEDB_TBL_DIM_PERSONA_T0.Inputs[Entrada de destino de OLE DB]"
               name="NUEVO"
-              startId="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_CS_ROUTE_DIM_UBICACION_T0.Outputs[NUEVO]" />
+              startId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_CS_ROUTE_DIM_PERSONA_T0.Outputs[NUEVO]" />
             <path
-              refId="Package\DFT_LOAD_DIM_UBICACION_T0.Paths[REPETIDO]"
-              endId="Package\DFT_LOAD_DIM_UBICACION_T0\AUD_RC_REPETIDOS.Inputs[Entrada de Recuento de filas 1]"
+              refId="Package\DFT_LOAD_DIM_PERSONA_T0.Paths[REPETIDO]"
+              endId="Package\DFT_LOAD_DIM_PERSONA_T0\AUD_RC_REPETIDOS.Inputs[Entrada de Recuento de filas 1]"
               name="REPETIDO"
-              startId="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_CS_ROUTE_DIM_UBICACION_T0.Outputs[REPETIDO]" />
+              startId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_CS_ROUTE_DIM_PERSONA_T0.Outputs[REPETIDO]" />
             <path
-              refId="Package\DFT_LOAD_DIM_UBICACION_T0.Paths[Salida de columna derivada]"
-              endId="Package\DFT_LOAD_DIM_UBICACION_T0\LKP_DIM_UBICACION_T0.Inputs[Entrada de búsqueda]"
+              refId="Package\DFT_LOAD_DIM_PERSONA_T0.Paths[Salida de columna derivada]"
+              endId="Package\DFT_LOAD_DIM_PERSONA_T0\LKP_DIM_PERSONA_T0.Inputs[Entrada de búsqueda]"
               name="Salida de columna derivada"
-              startId="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada]" />
+              startId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada]" />
             <path
-              refId="Package\DFT_LOAD_DIM_UBICACION_T0.Paths[Salida de entradas coincidentes de búsqueda]"
-              endId="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_CS_ROUTE_DIM_UBICACION_T0.Inputs[Entrada de división condicional]"
+              refId="Package\DFT_LOAD_DIM_PERSONA_T0.Paths[Salida de columna derivada1]"
+              endId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_CS_ROUTE_DIM_PERSONA_T0.Inputs[Entrada de división condicional]"
+              name="Salida de columna derivada"
+              startId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CAST_CATEGORIA_EDAD.Outputs[Salida de columna derivada]" />
+            <path
+              refId="Package\DFT_LOAD_DIM_PERSONA_T0.Paths[Salida de entradas coincidentes de búsqueda]"
+              endId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CAST_CATEGORIA_EDAD.Inputs[Entrada de columna derivada]"
               name="Salida de entradas coincidentes de búsqueda"
-              startId="Package\DFT_LOAD_DIM_UBICACION_T0\LKP_DIM_UBICACION_T0.Outputs[Salida de entradas coincidentes de búsqueda]" />
+              startId="Package\DFT_LOAD_DIM_PERSONA_T0\LKP_DIM_PERSONA_T0.Outputs[Salida de entradas coincidentes de búsqueda]" />
             <path
-              refId="Package\DFT_LOAD_DIM_UBICACION_T0.Paths[Salida de origen de OLE DB]"
-              endId="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_DC_BK_CASTS.Inputs[Entrada de columna derivada]"
+              refId="Package\DFT_LOAD_DIM_PERSONA_T0.Paths[Salida de origen de OLE DB]"
+              endId="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CASTS.Inputs[Entrada de columna derivada]"
               name="Salida de origen de OLE DB"
-              startId="Package\DFT_LOAD_DIM_UBICACION_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB]" />
+              startId="Package\DFT_LOAD_DIM_PERSONA_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -747,185 +891,188 @@ FROM  [DWH_COVID_19_COLOMBIA].[dbo].[TBL_CASOS_POSITIVOS];</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="234,42"
-          Id="Package\DFT_LOAD_DIM_UBICACION_T0"
-          TopLeft="46.5,30.5" />
+          Size="225,42"
+          Id="Package\DFT_LOAD_DIM_PERSONA_T0"
+          TopLeft="36.5,35.5" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\DFT_LOAD_DIM_UBICACION_T0">
+    design-time-name="Package\DFT_LOAD_DIM_PERSONA_T0">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="201,42"
-          Id="Package\DFT_LOAD_DIM_UBICACION_T0\LKP_DIM_UBICACION_T0"
-          TopLeft="101,210" />
-        <NodeLayout
-          Size="259,42"
-          Id="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_CS_ROUTE_DIM_UBICACION_T0"
-          TopLeft="65,322" />
-        <NodeLayout
-          Size="264,42"
-          Id="Package\DFT_LOAD_DIM_UBICACION_T0\DST_OLEDB_TBL_DIM_UBICACION_T0"
-          TopLeft="59,429" />
-        <NodeLayout
           Size="257,42"
-          Id="Package\DFT_LOAD_DIM_UBICACION_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS"
-          TopLeft="71,31" />
+          Id="Package\DFT_LOAD_DIM_PERSONA_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS"
+          TopLeft="52.5,28.5" />
         <NodeLayout
           Size="172,42"
-          Id="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_DC_BK_CASTS"
-          TopLeft="113.5,123.5" />
+          Id="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CASTS"
+          TopLeft="95.5,107.5" />
+        <EdgeLayout
+          Id="Package\DFT_LOAD_DIM_PERSONA_T0.Paths[Salida de origen de OLE DB]"
+          TopLeft="181.25,70.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37"
+              Start="0,0"
+              End="0,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="191,42"
+          Id="Package\DFT_LOAD_DIM_PERSONA_T0\LKP_DIM_PERSONA_T0"
+          TopLeft="91.5,194.5" />
+        <EdgeLayout
+          Id="Package\DFT_LOAD_DIM_PERSONA_T0.Paths[Salida de columna derivada]"
+          TopLeft="184.25,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="249,42"
+          Id="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_CS_ROUTE_DIM_PERSONA_T0"
+          TopLeft="61,367" />
         <NodeLayout
           Size="180,42"
-          Id="Package\DFT_LOAD_DIM_UBICACION_T0\AUD_RC_REPETIDOS"
-          TopLeft="492,321" />
+          Id="Package\DFT_LOAD_DIM_PERSONA_T0\AUD_RC_REPETIDOS"
+          TopLeft="507,373" />
         <EdgeLayout
-          Id="Package\DFT_LOAD_DIM_UBICACION_T0.Paths[Salida de origen de OLE DB]"
-          TopLeft="199.5,73">
+          Id="Package\DFT_LOAD_DIM_PERSONA_T0.Paths[REPETIDO]"
+          TopLeft="310,391">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,50.5"
+              EndConnector="197,0"
               Start="0,0"
-              End="0,43">
+              End="189.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,43" />
+                    End="189.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="71.0971875,5,47.305625,9.5732421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="255,42"
+          Id="Package\DFT_LOAD_DIM_PERSONA_T0\DST_OLEDB_TBL_DIM_PERSONA_T0"
+          TopLeft="54.5,455.5" />
+        <EdgeLayout
+          Id="Package\DFT_LOAD_DIM_PERSONA_T0.Paths[NUEVO]"
+          TopLeft="183.75,409">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46.5"
+              Start="0,0"
+              End="0,39">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-16.4128125,14.71337890625,32.825625,9.5732421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="261,42"
+          Id="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CAST_CATEGORIA_EDAD"
+          TopLeft="52.5,288.5" />
+        <EdgeLayout
+          Id="Package\DFT_LOAD_DIM_PERSONA_T0.Paths[Salida de entradas coincidentes de búsqueda]"
+          TopLeft="185,236.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52"
+              Start="0,0"
+              End="0,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-99.8190234375,16.15234375,199.638046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_LOAD_DIM_PERSONA_T0.Paths[Salida de columna derivada1]"
+          TopLeft="184.25,330.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.5"
+              Start="0,0"
+              End="0,29">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT_LOAD_DIM_UBICACION_T0.Paths[Salida de entradas coincidentes de búsqueda]"
-          TopLeft="198,252">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,70"
-              Start="0,0"
-              End="0,62.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,62.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-99.8190234375,25.15234375,199.638046875,12.1953125"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT_LOAD_DIM_UBICACION_T0.Paths[Salida de columna derivada]"
-          TopLeft="200.5,165.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,44.5"
-              Start="0,0"
-              End="0,37">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT_LOAD_DIM_UBICACION_T0.Paths[REPETIDO]"
-          TopLeft="324,342.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="168,0"
-              Start="0,0"
-              End="160.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="160.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="56.5971875,5,47.305625,9.5732421875"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT_LOAD_DIM_UBICACION_T0.Paths[NUEVO]"
-          TopLeft="192.75,364">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,65"
-              Start="0,0"
-              End="0,57.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,57.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-16.4128125,23.96337890625,32.825625,9.5732421875"
-              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT_LOAD_DIM_UBICACION_T0\LKP_DIM_UBICACION_T0">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT_LOAD_DIM_UBICACION_T0\DST_OLEDB_TBL_DIM_UBICACION_T0">
+    design-time-name="Package\DFT_LOAD_DIM_PERSONA_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -938,7 +1085,30 @@ FROM  [DWH_COVID_19_COLOMBIA].[dbo].[TBL_CASOS_POSITIVOS];</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT_LOAD_DIM_UBICACION_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS">
+    design-time-name="Package\DFT_LOAD_DIM_PERSONA_T0\LKP_DIM_PERSONA_T0">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_LOAD_DIM_PERSONA_T0\DST_OLEDB_TBL_DIM_PERSONA_T0">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
