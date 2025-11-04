@@ -1,0 +1,157 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/3/2025 8:59:59 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="VIVOBOOK-15"
+  DTS:CreatorName="VIVOBOOK-15\Daniel"
+  DTS:DTSID="{56D5D0F9-2B4F-4118-A7D1-ED373CD523DF}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5035.3"
+  DTS:LocaleID="9226"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{D882F195-6F22-4E28-BA8B-B64F100B74A8}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{D77D90A9-09A3-4893-9BFB-83DD3CA475DF}"
+      DTS:ObjectName="END_DATE">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">2022-01-23</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{08650B61-7683-4F8C-9222-78378093AE16}"
+      DTS:ObjectName="START_DATE">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">2020-03-21</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C82F2E6B-7856-4BCB-8495-CE41E8737296}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;DECLARE @START_DATE DATE = '&quot;+ @[$Package::START_DATE] +&quot;';DECLARE @END_DATE DATE = '&quot;+ @[$Package::END_DATE] +&quot;';INSERT INTO dbo.TBL_DIM_TIEMPO_T0 (&#xA;    SK_DIM_TIEMPO,&#xA;    DT_FECHA_NOTIFICACION,&#xA;    INT_DIA,&#xA;    INT_MES,&#xA;    INT_ANIO,&#xA;    INT_PERIODO,&#xA;    INT_SEMANA_MES,&#xA;    STR_MES,&#xA;    STR_SEMESTRE,&#xA;    DT_FECHA_CARGUE&#xA;)&#xA;SELECT&#xA;&#x9;-- SK_DIM_TIEMPO: Formato YYYYMMDD&#xA;    FORMAT(FECHA, 'yyyyMMdd') AS SK_DIM_TIEMPO,&#xA;&#xA;&#x9;-- DT_FECHA: FECHA&#xA;    FECHA AS DT_FECHA_NOTIFICACION,&#xA;&#xA;&#x9;-- INT_DIA: Día&#xA;    DAY(FECHA) AS INT_DIA,&#xA;&#xA;&#x9;-- INT_MES: Número del mes&#xA;    MONTH(FECHA) AS INT_MES,&#xA;&#xA;&#x9;-- INT_ANIO: Año&#xA;    YEAR(FECHA) AS INT_ANIO,&#xA;&#xA;&#x9;-- INT_PERIODO: Trimestre&#xA;    FORMAT(FECHA, 'yyyyMM') AS INT_PERIODO,&#xA;&#xA;&#x9;-- INT_SEMANA_MES: Semana del mes&#xA;    CASE &#xA;        WHEN DAY(FECHA) &lt;= 7 THEN 1&#xA;        WHEN DAY(FECHA) &lt;= 14 THEN 2&#xA;        WHEN DAY(FECHA) &lt;= 21 THEN 3&#xA;        WHEN DAY(FECHA) &lt;= 28 THEN 4&#xA;        ELSE 5&#xA;    END AS INT_SEMANA_MES,&#xA;&#xA;&#x9;-- STR_MES: Mes&#xA;    CASE MONTH(FECHA)&#xA;        WHEN 1 THEN 'Enero' WHEN 2 THEN 'Febrero' WHEN 3 THEN 'Marzo'&#xA;        WHEN 4 THEN 'Abril' WHEN 5 THEN 'Mayo' WHEN 6 THEN 'Junio'&#xA;        WHEN 7 THEN 'Julio' WHEN 8 THEN 'Agosto' WHEN 9 THEN 'Septiembre'&#xA;        WHEN 10 THEN 'Octubre' WHEN 11 THEN 'Noviembre' ELSE 'Diciembre'&#xA;    END AS STR_MES,&#xA;&#xA;&#x9;-- STR_SEMESTRE: Semestre&#xA;    CASE WHEN MONTH(FECHA) &lt;= 6 THEN '1er Semestre' ELSE '2do Semestre' END AS STR_SEMESTRE,&#xA;&#xA;&#x9;-- DT_FECHA_CARGUE (fecha/hora actual)&#xA;    GETDATE() AS DT_FECHA_CARGUE&#xA;&#xA;FROM (&#xA;    -- Generar FECHAS entre START_DATE y END_DATE&#xA;    SELECT DATEADD(DAY, NUMBER, @START_DATE) AS FECHA&#xA;    FROM master.dbo.spt_values&#xA;    WHERE type = 'P' &#xA;    AND NUMBER &lt;= DATEDIFF(DAY, @START_DATE, @END_DATE)&#xA;) AS FECHAS&#xA;&#xA;WHERE NOT EXISTS (&#xA;    -- Evitar duplicados&#xA;    SELECT 1 FROM dbo.TBL_DIM_TIEMPO_T0 T &#xA;    WHERE T.DT_FECHA_NOTIFICACION = FECHAS.FECHA&#xA;);&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="VAR_TBL_DIM_TIEMPO">
+      <DTS:VariableValue
+        DTS:DataType="8">DECLARE @START_DATE DATE = '2020-03-21';DECLARE @END_DATE DATE = '2022-01-23';INSERT INTO dbo.TBL_DIM_TIEMPO_T0 (
+    SK_DIM_TIEMPO,
+    DT_FECHA_NOTIFICACION,
+    INT_DIA,
+    INT_MES,
+    INT_ANIO,
+    INT_PERIODO,
+    INT_SEMANA_MES,
+    STR_MES,
+    STR_SEMESTRE,
+    DT_FECHA_CARGUE
+)
+SELECT
+	-- SK_DIM_TIEMPO: Formato YYYYMMDD
+    FORMAT(FECHA, 'yyyyMMdd') AS SK_DIM_TIEMPO,
+
+	-- DT_FECHA: FECHA
+    FECHA AS DT_FECHA_NOTIFICACION,
+
+	-- INT_DIA: Día
+    DAY(FECHA) AS INT_DIA,
+
+	-- INT_MES: Número del mes
+    MONTH(FECHA) AS INT_MES,
+
+	-- INT_ANIO: Año
+    YEAR(FECHA) AS INT_ANIO,
+
+	-- INT_PERIODO: Trimestre
+    FORMAT(FECHA, 'yyyyMM') AS INT_PERIODO,
+
+	-- INT_SEMANA_MES: Semana del mes
+    CASE 
+        WHEN DAY(FECHA) &lt;= 7 THEN 1
+        WHEN DAY(FECHA) &lt;= 14 THEN 2
+        WHEN DAY(FECHA) &lt;= 21 THEN 3
+        WHEN DAY(FECHA) &lt;= 28 THEN 4
+        ELSE 5
+    END AS INT_SEMANA_MES,
+
+	-- STR_MES: Mes
+    CASE MONTH(FECHA)
+        WHEN 1 THEN 'Enero' WHEN 2 THEN 'Febrero' WHEN 3 THEN 'Marzo'
+        WHEN 4 THEN 'Abril' WHEN 5 THEN 'Mayo' WHEN 6 THEN 'Junio'
+        WHEN 7 THEN 'Julio' WHEN 8 THEN 'Agosto' WHEN 9 THEN 'Septiembre'
+        WHEN 10 THEN 'Octubre' WHEN 11 THEN 'Noviembre' ELSE 'Diciembre'
+    END AS STR_MES,
+
+	-- STR_SEMESTRE: Semestre
+    CASE WHEN MONTH(FECHA) &lt;= 6 THEN '1er Semestre' ELSE '2do Semestre' END AS STR_SEMESTRE,
+
+	-- DT_FECHA_CARGUE (fecha/hora actual)
+    GETDATE() AS DT_FECHA_CARGUE
+
+FROM (
+    -- Generar FECHAS entre START_DATE y END_DATE
+    SELECT DATEADD(DAY, NUMBER, @START_DATE) AS FECHA
+    FROM master.dbo.spt_values
+    WHERE type = 'P' 
+    AND NUMBER &lt;= DATEDIFF(DAY, @START_DATE, @END_DATE)
+) AS FECHAS
+
+WHERE NOT EXISTS (
+    -- Evitar duplicados
+    SELECT 1 FROM dbo.TBL_DIM_TIEMPO_T0 T 
+    WHERE T.DT_FECHA_NOTIFICACION = FECHAS.FECHA
+);</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\SQL_LOAD_DIM_TIEMPO_T0"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{8D103CB1-EDB2-4256-A536-64039BEB2CF1}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL_LOAD_DIM_TIEMPO_T0"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A8C0E1DA-1237-4FE3-970C-86F101E949DB}"
+          SQLTask:SqlStmtSourceType="Variable"
+          SQLTask:SqlStatementSource="User::VAR_TBL_DIM_TIEMPO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="217,42"
+          Id="Package\SQL_LOAD_DIM_TIEMPO_T0"
+          TopLeft="64,38" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
