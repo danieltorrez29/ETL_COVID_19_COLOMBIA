@@ -1,0 +1,1648 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/4/2025 8:02:52 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="VIVOBOOK-15"
+  DTS:CreatorName="VIVOBOOK-15\Daniel"
+  DTS:DTSID="{0430C7BD-BC9A-4A16-AF4F-65A2CA93BDB5}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5035.3"
+  DTS:LocaleID="9226"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{11699FF3-9259-45C4-81E4-6DC65F917161}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT_LOAD_TBL_FACT_CASOS"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{4AB0D245-7798-4CD9-A9FE-B7F23954A381}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT_LOAD_TBL_FACT_CASOS"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="DST_OLEDB_TBL_FACT_CASOS"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[TBL_FACT_CASOS]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS.Connections[OleDbConnection]"
+                  connectionManagerID="{A8C0E1DA-1237-4FE3-970C-86F101E949DB}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[CNX_OLEDB_DWH_COVID_19_COLOMBIA]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS.Inputs[Entrada de destino de OLE DB].Columns[INT_DIAS_REPORTE]"
+                      cachedDataType="i4"
+                      cachedName="INT_DIAS_REPORTE"
+                      externalMetadataColumnId="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS.Inputs[Entrada de destino de OLE DB].ExternalColumns[INT_DIAS_REPORTE]"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[INT_DIAS_REPORTE]" />
+                    <inputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS.Inputs[Entrada de destino de OLE DB].Columns[INT_DIAS_RETRASO_DIAGNOSTICO]"
+                      cachedDataType="i4"
+                      cachedName="INT_DIAS_RETRASO_DIAGNOSTICO"
+                      externalMetadataColumnId="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS.Inputs[Entrada de destino de OLE DB].ExternalColumns[INT_DIAS_RETRASO_DIAGNOSTICO]"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[INT_DIAS_RETRASO_DIAGNOSTICO]" />
+                    <inputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS.Inputs[Entrada de destino de OLE DB].Columns[INT_DIAS_RECUPERACION]"
+                      cachedDataType="i4"
+                      cachedName="INT_DIAS_RECUPERACION"
+                      externalMetadataColumnId="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS.Inputs[Entrada de destino de OLE DB].ExternalColumns[INT_DIAS_RECUPERACION]"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[INT_DIAS_RECUPERACION]" />
+                    <inputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS.Inputs[Entrada de destino de OLE DB].Columns[INT_DIAS_HASTA_MUERTE]"
+                      cachedDataType="i4"
+                      cachedName="INT_DIAS_HASTA_MUERTE"
+                      externalMetadataColumnId="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS.Inputs[Entrada de destino de OLE DB].ExternalColumns[INT_DIAS_HASTA_MUERTE]"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[INT_DIAS_HASTA_MUERTE]" />
+                    <inputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS.Inputs[Entrada de destino de OLE DB].Columns[DT_FECHA_CARGUE]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DT_FECHA_CARGUE"
+                      externalMetadataColumnId="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS.Inputs[Entrada de destino de OLE DB].ExternalColumns[DT_FECHA_CARGUE]"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada].Columns[DT_FECHA_CARGUE]" />
+                    <inputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS.Inputs[Entrada de destino de OLE DB].Columns[SK_DIM_UBICACION]"
+                      cachedDataType="i4"
+                      cachedName="SK_DIM_UBICACION"
+                      externalMetadataColumnId="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS.Inputs[Entrada de destino de OLE DB].ExternalColumns[SK_DIM_UBICACION]"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_UBICACION_T0.Outputs[Salida de entradas coincidentes de búsqueda].Columns[SK_DIM_UBICACION]" />
+                    <inputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS.Inputs[Entrada de destino de OLE DB].Columns[SK_DIM_PERSONA]"
+                      cachedDataType="i4"
+                      cachedName="SK_DIM_PERSONA"
+                      externalMetadataColumnId="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS.Inputs[Entrada de destino de OLE DB].ExternalColumns[SK_DIM_PERSONA]"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_PERSONA_T0.Outputs[Salida de entradas coincidentes de búsqueda].Columns[SK_DIM_PERSONA]" />
+                    <inputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS.Inputs[Entrada de destino de OLE DB].Columns[CONV_BIT_RECUPERADO]"
+                      cachedDataType="bool"
+                      cachedName="CONV_BIT_RECUPERADO"
+                      externalMetadataColumnId="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS.Inputs[Entrada de destino de OLE DB].ExternalColumns[BIT_RECUPERADO]"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada].Columns[CONV_BIT_RECUPERADO]" />
+                    <inputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS.Inputs[Entrada de destino de OLE DB].Columns[CONV_BIT_MUERTO]"
+                      cachedDataType="bool"
+                      cachedName="CONV_BIT_MUERTO"
+                      externalMetadataColumnId="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS.Inputs[Entrada de destino de OLE DB].ExternalColumns[BIT_MUERTO]"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada].Columns[CONV_BIT_MUERTO]" />
+                    <inputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS.Inputs[Entrada de destino de OLE DB].Columns[SK_DIM_CASO]"
+                      cachedDataType="i4"
+                      cachedName="SK_DIM_CASO"
+                      externalMetadataColumnId="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS.Inputs[Entrada de destino de OLE DB].ExternalColumns[SK_DIM_CASO]"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_CASO_T2.Outputs[Salida de entradas coincidentes de búsqueda].Columns[SK_DIM_CASO]" />
+                    <inputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS.Inputs[Entrada de destino de OLE DB].Columns[CONV_SK_DIM_TIEMPO]"
+                      cachedDataType="i4"
+                      cachedName="CONV_SK_DIM_TIEMPO"
+                      externalMetadataColumnId="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS.Inputs[Entrada de destino de OLE DB].ExternalColumns[SK_DIM_TIEMPO]"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada].Columns[CONV_SK_DIM_TIEMPO]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS.Inputs[Entrada de destino de OLE DB].ExternalColumns[SK_DIM_CASO]"
+                      dataType="i4"
+                      name="SK_DIM_CASO" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS.Inputs[Entrada de destino de OLE DB].ExternalColumns[SK_DIM_PERSONA]"
+                      dataType="i4"
+                      name="SK_DIM_PERSONA" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS.Inputs[Entrada de destino de OLE DB].ExternalColumns[SK_DIM_UBICACION]"
+                      dataType="i4"
+                      name="SK_DIM_UBICACION" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS.Inputs[Entrada de destino de OLE DB].ExternalColumns[SK_DIM_TIEMPO]"
+                      dataType="i4"
+                      name="SK_DIM_TIEMPO" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS.Inputs[Entrada de destino de OLE DB].ExternalColumns[BIT_RECUPERADO]"
+                      dataType="bool"
+                      name="BIT_RECUPERADO" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS.Inputs[Entrada de destino de OLE DB].ExternalColumns[BIT_MUERTO]"
+                      dataType="bool"
+                      name="BIT_MUERTO" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS.Inputs[Entrada de destino de OLE DB].ExternalColumns[INT_DIAS_REPORTE]"
+                      dataType="i4"
+                      name="INT_DIAS_REPORTE" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS.Inputs[Entrada de destino de OLE DB].ExternalColumns[INT_DIAS_RETRASO_DIAGNOSTICO]"
+                      dataType="i4"
+                      name="INT_DIAS_RETRASO_DIAGNOSTICO" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS.Inputs[Entrada de destino de OLE DB].ExternalColumns[INT_DIAS_RECUPERACION]"
+                      dataType="i4"
+                      name="INT_DIAS_RECUPERACION" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS.Inputs[Entrada de destino de OLE DB].ExternalColumns[INT_DIAS_HASTA_MUERTE]"
+                      dataType="i4"
+                      name="INT_DIAS_HASTA_MUERTE" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS.Inputs[Entrada de destino de OLE DB].ExternalColumns[DT_FECHA_CARGUE]"
+                      dataType="dbTimeStamp"
+                      name="DT_FECHA_CARGUE" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_CASO_T2"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Búsqueda;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;6"
+              description="Combina columnas adicionales con el flujo de datos mediante la búsqueda de valores en una tabla. Por ejemplo, se combina la columna 'id. de empleado' con la tabla de empleados para obtener la 'fecha de contratación' y 'el nombre de empleado'. Se recomienda esta transformación cuando hay suficiente espacio en memoria para la tabla de búsqueda."
+              name="LKP_DIM_CASO_T2"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL que genera la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT SK_DIM_CASO,
+	INT_ID_CASO AS LLAVE_CASO_D
+FROM dbo.TBL_DIM_CASO_T2;</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica una instrucción SQL que usa parámetros para generar la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT SK_DIM_CASO,
+	INT_ID_CASO AS LLAVE_CASO_D
+FROM dbo.TBL_DIM_CASO_T2;) [refTable]
+where [refTable].[LLAVE_CASO_D] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de conexión utilizado para tener acceso al conjunto de datos de referencia."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de caché de la tabla de búsqueda."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cómo la transformación de búsquedas trata las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el porcentaje de la caché asignado a las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indica si se debe hacer referencia a metadatos en formato XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="SK_DIM_CASO" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="LLAVE_CASO_D" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Especifica la lista de identificadores de linaje que están asignados a los parámetros que usa la instrucción SQL de la propiedad SQLCommand. Las entradas de la lista están separadas por puntos y comas."
+                  name="ParameterMap">#{Package\DFT_LOAD_TBL_FACT_CASOS\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada].Columns[CONV_LLAVE_CASO]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determina si las claves duplicadas de los datos de referencia se deben tratar como errores cuando se usa el modo de caché."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_CASO_T2.Connections[OleDbConnection]"
+                  connectionManagerID="{A8C0E1DA-1237-4FE3-970C-86F101E949DB}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[CNX_OLEDB_DWH_COVID_19_COLOMBIA]"
+                  description="Administrador de conexiones utilizado para obtener acceso a los datos de búsqueda."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_CASO_T2.Inputs[Entrada de búsqueda]"
+                  name="Entrada de búsqueda">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_CASO_T2.Inputs[Entrada de búsqueda].Columns[CONV_LLAVE_CASO]"
+                      cachedDataType="i4"
+                      cachedName="CONV_LLAVE_CASO"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada].Columns[CONV_LLAVE_CASO]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                          name="JoinToReferenceColumn">LLAVE_CASO_D</property>
+                        <property
+                          dataType="System.Null"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_CASO_T2.Outputs[Salida de entradas coincidentes de búsqueda]"
+                  errorOrTruncationOperation="Búsqueda"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Salida de entradas coincidentes de búsqueda"
+                  synchronousInputId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_CASO_T2.Inputs[Entrada de búsqueda]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_CASO_T2.Outputs[Salida de entradas coincidentes de búsqueda].Columns[SK_DIM_CASO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copiar columna"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_CASO_T2.Outputs[Salida de entradas coincidentes de búsqueda].Columns[SK_DIM_CASO]"
+                      name="SK_DIM_CASO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn">SK_DIM_CASO</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_CASO_T2.Outputs[Salida de entradas no coincidentes de búsqueda]"
+                  description="Salida de búsqueda que trata las filas sin entradas coincidentes en el conjunto de datos de referencia. Utilice esta salida cuando la propiedad NoMatchBehavior esté establecida en 'Enviar las filas sin entradas coincidentes a la salida de entradas no coincidentes'."
+                  exclusionGroup="1"
+                  name="Salida de entradas no coincidentes de búsqueda"
+                  synchronousInputId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_CASO_T2.Inputs[Entrada de búsqueda]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_CASO_T2.Outputs[Salida de error de búsqueda]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de búsqueda"
+                  synchronousInputId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_CASO_T2.Inputs[Entrada de búsqueda]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_CASO_T2.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_CASO_T2.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_CASO_T2.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_CASO_T2.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_PERSONA_T0"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Búsqueda;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;6"
+              description="Combina columnas adicionales con el flujo de datos mediante la búsqueda de valores en una tabla. Por ejemplo, se combina la columna 'id. de empleado' con la tabla de empleados para obtener la 'fecha de contratación' y 'el nombre de empleado'. Se recomienda esta transformación cuando hay suficiente espacio en memoria para la tabla de búsqueda."
+              name="LKP_DIM_PERSONA_T0"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL que genera la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT SK_DIM_PERSONA, CONCAT(INT_EDAD, STR_CATEGORIA_EDAD, CHR_SEXO) LLAVE_PERSONA_D
+FROM dbo.TBL_DIM_PERSONA_T0;</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica una instrucción SQL que usa parámetros para generar la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT SK_DIM_PERSONA, CONCAT(INT_EDAD, STR_CATEGORIA_EDAD, CHR_SEXO) LLAVE_PERSONA_D
+FROM dbo.TBL_DIM_PERSONA_T0;) [refTable]
+where [refTable].[LLAVE_PERSONA_D] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de conexión utilizado para tener acceso al conjunto de datos de referencia."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de caché de la tabla de búsqueda."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cómo la transformación de búsquedas trata las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el porcentaje de la caché asignado a las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indica si se debe hacer referencia a metadatos en formato XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="SK_DIM_PERSONA" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="LLAVE_PERSONA_D" dataType="DT_WSTR" length="64" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Especifica la lista de identificadores de linaje que están asignados a los parámetros que usa la instrucción SQL de la propiedad SQLCommand. Las entradas de la lista están separadas por puntos y comas."
+                  name="ParameterMap">#{Package\DFT_LOAD_TBL_FACT_CASOS\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada].Columns[LLAVE_PERSONA]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determina si las claves duplicadas de los datos de referencia se deben tratar como errores cuando se usa el modo de caché."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_PERSONA_T0.Connections[OleDbConnection]"
+                  connectionManagerID="{A8C0E1DA-1237-4FE3-970C-86F101E949DB}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[CNX_OLEDB_DWH_COVID_19_COLOMBIA]"
+                  description="Administrador de conexiones utilizado para obtener acceso a los datos de búsqueda."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_PERSONA_T0.Inputs[Entrada de búsqueda]"
+                  name="Entrada de búsqueda">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_PERSONA_T0.Inputs[Entrada de búsqueda].Columns[LLAVE_PERSONA]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="LLAVE_PERSONA"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada].Columns[LLAVE_PERSONA]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                          name="JoinToReferenceColumn">LLAVE_PERSONA_D</property>
+                        <property
+                          dataType="System.Null"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_PERSONA_T0.Outputs[Salida de entradas coincidentes de búsqueda]"
+                  errorOrTruncationOperation="Búsqueda"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Salida de entradas coincidentes de búsqueda"
+                  synchronousInputId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_PERSONA_T0.Inputs[Entrada de búsqueda]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_PERSONA_T0.Outputs[Salida de entradas coincidentes de búsqueda].Columns[SK_DIM_PERSONA]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copiar columna"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_PERSONA_T0.Outputs[Salida de entradas coincidentes de búsqueda].Columns[SK_DIM_PERSONA]"
+                      name="SK_DIM_PERSONA"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn">SK_DIM_PERSONA</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_PERSONA_T0.Outputs[Salida de entradas no coincidentes de búsqueda]"
+                  description="Salida de búsqueda que trata las filas sin entradas coincidentes en el conjunto de datos de referencia. Utilice esta salida cuando la propiedad NoMatchBehavior esté establecida en 'Enviar las filas sin entradas coincidentes a la salida de entradas no coincidentes'."
+                  exclusionGroup="1"
+                  name="Salida de entradas no coincidentes de búsqueda"
+                  synchronousInputId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_PERSONA_T0.Inputs[Entrada de búsqueda]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_PERSONA_T0.Outputs[Salida de error de búsqueda]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de búsqueda"
+                  synchronousInputId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_PERSONA_T0.Inputs[Entrada de búsqueda]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_PERSONA_T0.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_PERSONA_T0.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_PERSONA_T0.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_PERSONA_T0.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_UBICACION_T0"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Búsqueda;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;6"
+              description="Combina columnas adicionales con el flujo de datos mediante la búsqueda de valores en una tabla. Por ejemplo, se combina la columna 'id. de empleado' con la tabla de empleados para obtener la 'fecha de contratación' y 'el nombre de empleado'. Se recomienda esta transformación cuando hay suficiente espacio en memoria para la tabla de búsqueda."
+              name="LKP_DIM_UBICACION_T0"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL que genera la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT SK_DIM_UBICACION, CONCAT(STR_DEPARTAMENTO, STR_MUNICIPIO) LLAVE_UBICACION_D
+FROM dbo.TBL_DIM_UBICACION_T0;</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica una instrucción SQL que usa parámetros para generar la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT SK_DIM_UBICACION, CONCAT(STR_DEPARTAMENTO, STR_MUNICIPIO) LLAVE_UBICACION_D
+FROM dbo.TBL_DIM_UBICACION_T0;) [refTable]
+where [refTable].[LLAVE_UBICACION_D] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de conexión utilizado para tener acceso al conjunto de datos de referencia."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de caché de la tabla de búsqueda."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cómo la transformación de búsquedas trata las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el porcentaje de la caché asignado a las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indica si se debe hacer referencia a metadatos en formato XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="SK_DIM_UBICACION" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="LLAVE_UBICACION_D" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Especifica la lista de identificadores de linaje que están asignados a los parámetros que usa la instrucción SQL de la propiedad SQLCommand. Las entradas de la lista están separadas por puntos y comas."
+                  name="ParameterMap">#{Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[LLAVE_UBICACION]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determina si las claves duplicadas de los datos de referencia se deben tratar como errores cuando se usa el modo de caché."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_UBICACION_T0.Connections[OleDbConnection]"
+                  connectionManagerID="{A8C0E1DA-1237-4FE3-970C-86F101E949DB}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[CNX_OLEDB_DWH_COVID_19_COLOMBIA]"
+                  description="Administrador de conexiones utilizado para obtener acceso a los datos de búsqueda."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_UBICACION_T0.Inputs[Entrada de búsqueda]"
+                  name="Entrada de búsqueda">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_UBICACION_T0.Inputs[Entrada de búsqueda].Columns[LLAVE_UBICACION]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="LLAVE_UBICACION"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[LLAVE_UBICACION]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                          name="JoinToReferenceColumn">LLAVE_UBICACION_D</property>
+                        <property
+                          dataType="System.Null"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_UBICACION_T0.Outputs[Salida de entradas coincidentes de búsqueda]"
+                  errorOrTruncationOperation="Búsqueda"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Salida de entradas coincidentes de búsqueda"
+                  synchronousInputId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_UBICACION_T0.Inputs[Entrada de búsqueda]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_UBICACION_T0.Outputs[Salida de entradas coincidentes de búsqueda].Columns[SK_DIM_UBICACION]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copiar columna"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_UBICACION_T0.Outputs[Salida de entradas coincidentes de búsqueda].Columns[SK_DIM_UBICACION]"
+                      name="SK_DIM_UBICACION"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn">SK_DIM_UBICACION</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_UBICACION_T0.Outputs[Salida de entradas no coincidentes de búsqueda]"
+                  description="Salida de búsqueda que trata las filas sin entradas coincidentes en el conjunto de datos de referencia. Utilice esta salida cuando la propiedad NoMatchBehavior esté establecida en 'Enviar las filas sin entradas coincidentes a la salida de entradas no coincidentes'."
+                  exclusionGroup="1"
+                  name="Salida de entradas no coincidentes de búsqueda"
+                  synchronousInputId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_UBICACION_T0.Inputs[Entrada de búsqueda]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_UBICACION_T0.Outputs[Salida de error de búsqueda]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de búsqueda"
+                  synchronousInputId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_UBICACION_T0.Inputs[Entrada de búsqueda]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_UBICACION_T0.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_UBICACION_T0.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_UBICACION_T0.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_UBICACION_T0.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="SRC_OLEDB_TBL_CASOS_POSITIVOS"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
+	TRY_CAST(FORMAT(FECHA_NOTIFICACION, 'yyyyMMdd') AS BIGINT) AS SK_DIM_TIEMPO,
+	CONCAT(NOMBRE_DEPARTAMENTO, NOMBRE_MUNICIPIO) AS LLAVE_UBICACION,
+	EDAD,
+	CASE
+        WHEN EDAD BETWEEN 1 AND 5 THEN 'PRIMERA INFANCIA (1–5)'
+        WHEN EDAD BETWEEN 6 AND 11 THEN 'INFANCIA INTERMEDIA (6–11)'
+        WHEN EDAD BETWEEN 12 AND 14 THEN 'ADOLESCENCIA TEMPRANA (12–14)'
+        WHEN EDAD BETWEEN 15 AND 17 THEN 'ADOLESCENCIA MEDIA (15–17)'
+        WHEN EDAD BETWEEN 18 AND 20 THEN 'ADOLESCENCIA TARDÍA (18–20)'
+        WHEN EDAD BETWEEN 21 AND 24 THEN 'ADULTEZ EMERGENTE (21–24)'
+        WHEN EDAD BETWEEN 25 AND 39 THEN 'ADULTEZ JOVEN (25–39)'
+        WHEN EDAD BETWEEN 40 AND 54 THEN 'ADULTEZ MEDIA (40–54)'
+        WHEN EDAD BETWEEN 55 AND 64 THEN 'ADULTEZ MEDIA TARDÍA (55–64)'
+        WHEN EDAD BETWEEN 65 AND 74 THEN 'ADULTEZ MAYOR TEMPRANA (65–74)'
+        WHEN EDAD BETWEEN 75 AND 84 THEN 'ADULTEZ MAYOR (75–84)'
+        WHEN EDAD BETWEEN 85 AND 94 THEN 'VEJEZ AVANZADA (85–94)'
+        WHEN EDAD BETWEEN 95 AND 113 THEN 'LONGEVIDAD EXTREMA (95–113)'
+        ELSE 'FUERA DE RANGO'
+    END AS CATEGORIA_EDAD,
+	SEXO,
+	ID_CASO AS LLAVE_CASO,
+	CASE 
+		WHEN UPPER(LTRIM(RTRIM(CONDICION_FINAL))) = 'RECUPERADO' THEN 1
+		ELSE 0
+	END AS BIT_RECUPERADO,
+	CASE 
+		WHEN UPPER(LTRIM(RTRIM(CONDICION_FINAL))) = 'FALLECIDO' OR UPPER(LTRIM(RTRIM(CONDICION_FINAL))) = 'N/A' THEN 1
+		ELSE 0
+	END AS BIT_MUERTO,
+	DATEDIFF(DAY, FECHA_DIAGNOSTICO, FECHA_REPORTE_WEB) AS INT_DIAS_REPORTE,
+	DATEDIFF(DAY, FECHA_INICIO_SINTOMAS, FECHA_DIAGNOSTICO) AS INT_DIAS_RETRASO_DIAGNOSTICO,
+	DATEDIFF(DAY, FECHA_INICIO_SINTOMAS, FECHA_RECUPERACION) AS INT_DIAS_RECUPERACION,
+    DATEDIFF(DAY, FECHA_INICIO_SINTOMAS, FECHA_MUERTE) AS INT_DIAS_HASTA_MUERTE
+FROM dbo.TBL_CASOS_POSITIVOS;</property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Connections[OleDbConnection]"
+                  connectionManagerID="{A8C0E1DA-1237-4FE3-970C-86F101E949DB}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[CNX_OLEDB_DWH_COVID_19_COLOMBIA]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB]"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[LLAVE_UBICACION]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].ExternalColumns[LLAVE_UBICACION]"
+                      length="100"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[LLAVE_UBICACION]"
+                      name="LLAVE_UBICACION"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[EDAD]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].ExternalColumns[EDAD]"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[EDAD]"
+                      name="EDAD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[CATEGORIA_EDAD]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].ExternalColumns[CATEGORIA_EDAD]"
+                      length="30"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[CATEGORIA_EDAD]"
+                      name="CATEGORIA_EDAD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[SEXO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].ExternalColumns[SEXO]"
+                      length="10"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[SEXO]"
+                      name="SEXO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[BIT_RECUPERADO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].ExternalColumns[BIT_RECUPERADO]"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[BIT_RECUPERADO]"
+                      name="BIT_RECUPERADO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[BIT_MUERTO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].ExternalColumns[BIT_MUERTO]"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[BIT_MUERTO]"
+                      name="BIT_MUERTO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[INT_DIAS_REPORTE]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].ExternalColumns[INT_DIAS_REPORTE]"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[INT_DIAS_REPORTE]"
+                      name="INT_DIAS_REPORTE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[INT_DIAS_RETRASO_DIAGNOSTICO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].ExternalColumns[INT_DIAS_RETRASO_DIAGNOSTICO]"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[INT_DIAS_RETRASO_DIAGNOSTICO]"
+                      name="INT_DIAS_RETRASO_DIAGNOSTICO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[INT_DIAS_RECUPERACION]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].ExternalColumns[INT_DIAS_RECUPERACION]"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[INT_DIAS_RECUPERACION]"
+                      name="INT_DIAS_RECUPERACION"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[INT_DIAS_HASTA_MUERTE]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].ExternalColumns[INT_DIAS_HASTA_MUERTE]"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[INT_DIAS_HASTA_MUERTE]"
+                      name="INT_DIAS_HASTA_MUERTE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[SK_DIM_TIEMPO]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].ExternalColumns[SK_DIM_TIEMPO]"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[SK_DIM_TIEMPO]"
+                      name="SK_DIM_TIEMPO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[LLAVE_CASO]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].ExternalColumns[LLAVE_CASO]"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[LLAVE_CASO]"
+                      name="LLAVE_CASO"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].ExternalColumns[LLAVE_UBICACION]"
+                      dataType="wstr"
+                      length="100"
+                      name="LLAVE_UBICACION" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].ExternalColumns[EDAD]"
+                      dataType="ui1"
+                      name="EDAD" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].ExternalColumns[CATEGORIA_EDAD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="CATEGORIA_EDAD" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].ExternalColumns[SEXO]"
+                      dataType="wstr"
+                      length="10"
+                      name="SEXO" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].ExternalColumns[BIT_RECUPERADO]"
+                      dataType="i4"
+                      name="BIT_RECUPERADO" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].ExternalColumns[BIT_MUERTO]"
+                      dataType="i4"
+                      name="BIT_MUERTO" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].ExternalColumns[INT_DIAS_REPORTE]"
+                      dataType="i4"
+                      name="INT_DIAS_REPORTE" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].ExternalColumns[INT_DIAS_RETRASO_DIAGNOSTICO]"
+                      dataType="i4"
+                      name="INT_DIAS_RETRASO_DIAGNOSTICO" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].ExternalColumns[INT_DIAS_RECUPERACION]"
+                      dataType="i4"
+                      name="INT_DIAS_RECUPERACION" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].ExternalColumns[INT_DIAS_HASTA_MUERTE]"
+                      dataType="i4"
+                      name="INT_DIAS_HASTA_MUERTE" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].ExternalColumns[SK_DIM_TIEMPO]"
+                      dataType="i8"
+                      name="SK_DIM_TIEMPO" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].ExternalColumns[LLAVE_CASO]"
+                      dataType="r8"
+                      name="LLAVE_CASO" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[SK_DIM_TIEMPO]"
+                      dataType="i8"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[SK_DIM_TIEMPO]"
+                      name="SK_DIM_TIEMPO" />
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[LLAVE_UBICACION]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[LLAVE_UBICACION]"
+                      name="LLAVE_UBICACION" />
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[EDAD]"
+                      dataType="ui1"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[EDAD]"
+                      name="EDAD" />
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[CATEGORIA_EDAD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[CATEGORIA_EDAD]"
+                      name="CATEGORIA_EDAD" />
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[SEXO]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[SEXO]"
+                      name="SEXO" />
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[LLAVE_CASO]"
+                      dataType="r8"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[LLAVE_CASO]"
+                      name="LLAVE_CASO" />
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[BIT_RECUPERADO]"
+                      dataType="i4"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[BIT_RECUPERADO]"
+                      name="BIT_RECUPERADO" />
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[BIT_MUERTO]"
+                      dataType="i4"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[BIT_MUERTO]"
+                      name="BIT_MUERTO" />
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[INT_DIAS_REPORTE]"
+                      dataType="i4"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[INT_DIAS_REPORTE]"
+                      name="INT_DIAS_REPORTE" />
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[INT_DIAS_RETRASO_DIAGNOSTICO]"
+                      dataType="i4"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[INT_DIAS_RETRASO_DIAGNOSTICO]"
+                      name="INT_DIAS_RETRASO_DIAGNOSTICO" />
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[INT_DIAS_RECUPERACION]"
+                      dataType="i4"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[INT_DIAS_RECUPERACION]"
+                      name="INT_DIAS_RECUPERACION" />
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[INT_DIAS_HASTA_MUERTE]"
+                      dataType="i4"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[INT_DIAS_HASTA_MUERTE]"
+                      name="INT_DIAS_HASTA_MUERTE" />
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_LOAD_TBL_FACT_CASOS\TRF_DC_BK_CASTS"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Columna derivada;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Crea nuevos valores de columna aplicando expresiones a las columnas de entrada de la transformación. Crea nuevas columnas o sobrescribe las columnas existentes. Por ejemplo, se concatenan los valores de las columnas 'nombre' y 'apellidos' para crear una columna 'nombre completo'."
+              name="TRF_DC_BK_CASTS"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT_LOAD_TBL_FACT_CASOS\TRF_DC_BK_CASTS.Inputs[Entrada de columna derivada]"
+                  description="Entrada en la transformación Columna derivada"
+                  name="Entrada de columna derivada">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\TRF_DC_BK_CASTS.Inputs[Entrada de columna derivada].Columns[EDAD]"
+                      cachedDataType="ui1"
+                      cachedName="EDAD"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[EDAD]" />
+                    <inputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\TRF_DC_BK_CASTS.Inputs[Entrada de columna derivada].Columns[CATEGORIA_EDAD]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="CATEGORIA_EDAD"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[CATEGORIA_EDAD]" />
+                    <inputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\TRF_DC_BK_CASTS.Inputs[Entrada de columna derivada].Columns[SEXO]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="SEXO"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[SEXO]" />
+                    <inputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\TRF_DC_BK_CASTS.Inputs[Entrada de columna derivada].Columns[SK_DIM_TIEMPO]"
+                      cachedDataType="i8"
+                      cachedName="SK_DIM_TIEMPO"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[SK_DIM_TIEMPO]" />
+                    <inputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\TRF_DC_BK_CASTS.Inputs[Entrada de columna derivada].Columns[BIT_RECUPERADO]"
+                      cachedDataType="i4"
+                      cachedName="BIT_RECUPERADO"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[BIT_RECUPERADO]" />
+                    <inputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\TRF_DC_BK_CASTS.Inputs[Entrada de columna derivada].Columns[LLAVE_CASO]"
+                      cachedDataType="r8"
+                      cachedName="LLAVE_CASO"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[LLAVE_CASO]" />
+                    <inputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\TRF_DC_BK_CASTS.Inputs[Entrada de columna derivada].Columns[BIT_MUERTO]"
+                      cachedDataType="i4"
+                      cachedName="BIT_MUERTO"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[BIT_MUERTO]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_LOAD_TBL_FACT_CASOS\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada]"
+                  description="Salida predeterminada de la transformación Columna derivada"
+                  exclusionGroup="1"
+                  name="Salida de columna derivada"
+                  synchronousInputId="Package\DFT_LOAD_TBL_FACT_CASOS\TRF_DC_BK_CASTS.Inputs[Entrada de columna derivada]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada].Columns[LLAVE_PERSONA]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Cálculo"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada].Columns[LLAVE_PERSONA]"
+                      name="LLAVE_PERSONA"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión de columna derivada"
+                          name="Expression">(DT_WSTR,10)#{Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[EDAD]} + (DT_WSTR,30)#{Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[CATEGORIA_EDAD]} + (DT_WSTR,10)#{Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[SEXO]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión descriptiva de columna derivada"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_WSTR,10)EDAD + (DT_WSTR,30)CATEGORIA_EDAD + (DT_WSTR,10)SEXO</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada].Columns[DT_FECHA_CARGUE]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Cálculo"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada].Columns[DT_FECHA_CARGUE]"
+                      name="DT_FECHA_CARGUE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión de columna derivada"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión descriptiva de columna derivada"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada].Columns[CONV_LLAVE_CASO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Cálculo"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada].Columns[CONV_LLAVE_CASO]"
+                      name="CONV_LLAVE_CASO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión de columna derivada"
+                          name="Expression">(DT_I4)#{Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[LLAVE_CASO]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión descriptiva de columna derivada"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_I4)LLAVE_CASO</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada].Columns[CONV_SK_DIM_TIEMPO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Cálculo"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada].Columns[CONV_SK_DIM_TIEMPO]"
+                      name="CONV_SK_DIM_TIEMPO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión de columna derivada"
+                          name="Expression">(DT_I4)#{Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[SK_DIM_TIEMPO]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión descriptiva de columna derivada"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_I4)SK_DIM_TIEMPO</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada].Columns[CONV_BIT_RECUPERADO]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Cálculo"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada].Columns[CONV_BIT_RECUPERADO]"
+                      name="CONV_BIT_RECUPERADO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión de columna derivada"
+                          name="Expression">(DT_BOOL)(#{Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[BIT_RECUPERADO]} == 1)</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión descriptiva de columna derivada"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_BOOL)(BIT_RECUPERADO == 1)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada].Columns[CONV_BIT_MUERTO]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Cálculo"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada].Columns[CONV_BIT_MUERTO]"
+                      name="CONV_BIT_MUERTO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión de columna derivada"
+                          name="Expression">(DT_BOOL)(#{Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[BIT_MUERTO]} == 1)</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión descriptiva de columna derivada"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_BOOL)(BIT_MUERTO == 1)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_LOAD_TBL_FACT_CASOS\TRF_DC_BK_CASTS.Outputs[Salida de error de columna derivada]"
+                  description="Salida de error de la transformación Columna derivada"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de columna derivada"
+                  synchronousInputId="Package\DFT_LOAD_TBL_FACT_CASOS\TRF_DC_BK_CASTS.Inputs[Entrada de columna derivada]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\TRF_DC_BK_CASTS.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\TRF_DC_BK_CASTS.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_LOAD_TBL_FACT_CASOS\TRF_DC_BK_CASTS.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_LOAD_TBL_FACT_CASOS\TRF_DC_BK_CASTS.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT_LOAD_TBL_FACT_CASOS.Paths[Salida de columna derivada]"
+              endId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_UBICACION_T0.Inputs[Entrada de búsqueda]"
+              name="Salida de columna derivada"
+              startId="Package\DFT_LOAD_TBL_FACT_CASOS\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada]" />
+            <path
+              refId="Package\DFT_LOAD_TBL_FACT_CASOS.Paths[Salida de entradas coincidentes de búsqueda]"
+              endId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_PERSONA_T0.Inputs[Entrada de búsqueda]"
+              name="Salida de entradas coincidentes de búsqueda"
+              startId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_UBICACION_T0.Outputs[Salida de entradas coincidentes de búsqueda]" />
+            <path
+              refId="Package\DFT_LOAD_TBL_FACT_CASOS.Paths[Salida de entradas coincidentes de búsqueda1]"
+              endId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_CASO_T2.Inputs[Entrada de búsqueda]"
+              name="Salida de entradas coincidentes de búsqueda"
+              startId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_PERSONA_T0.Outputs[Salida de entradas coincidentes de búsqueda]" />
+            <path
+              refId="Package\DFT_LOAD_TBL_FACT_CASOS.Paths[Salida de entradas coincidentes de búsqueda2]"
+              endId="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS.Inputs[Entrada de destino de OLE DB]"
+              name="Salida de entradas coincidentes de búsqueda"
+              startId="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_CASO_T2.Outputs[Salida de entradas coincidentes de búsqueda]" />
+            <path
+              refId="Package\DFT_LOAD_TBL_FACT_CASOS.Paths[Salida de origen de OLE DB]"
+              endId="Package\DFT_LOAD_TBL_FACT_CASOS\TRF_DC_BK_CASTS.Inputs[Entrada de columna derivada]"
+              name="Salida de origen de OLE DB"
+              startId="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\TRC_TBL_FACT_CASOS"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{C186EB7A-A459-4602-B339-D8E8CEC9DB61}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TRC_TBL_FACT_CASOS"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A8C0E1DA-1237-4FE3-970C-86F101E949DB}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.TBL_FACT_CASOS;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{CC7A450A-DDB4-427C-9785-2CFF819631E7}"
+      DTS:From="Package\TRC_TBL_FACT_CASOS"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DFT_LOAD_TBL_FACT_CASOS" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="222,42"
+          Id="Package\DFT_LOAD_TBL_FACT_CASOS"
+          TopLeft="58.5,133.5" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\TRC_TBL_FACT_CASOS"
+          TopLeft="80,31" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="172.25,73">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.5"
+              Start="0,0"
+              End="0,53">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT_LOAD_TBL_FACT_CASOS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="257,42"
+          Id="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS"
+          TopLeft="49.5,23.5" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\DFT_LOAD_TBL_FACT_CASOS\TRF_DC_BK_CASTS"
+          TopLeft="87.5,114.5" />
+        <EdgeLayout
+          Id="Package\DFT_LOAD_TBL_FACT_CASOS.Paths[Salida de origen de OLE DB]"
+          TopLeft="175.75,65.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49"
+              Start="0,0"
+              End="0,41.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="201,42"
+          Id="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_UBICACION_T0"
+          TopLeft="438.5,114.5" />
+        <EdgeLayout
+          Id="Package\DFT_LOAD_TBL_FACT_CASOS.Paths[Salida de columna derivada]"
+          TopLeft="259.5,135.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="179,0"
+              Start="0,0"
+              End="171.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="171.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="191,42"
+          Id="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_PERSONA_T0"
+          TopLeft="436.5,233.5" />
+        <EdgeLayout
+          Id="Package\DFT_LOAD_TBL_FACT_CASOS.Paths[Salida de entradas coincidentes de búsqueda]"
+          TopLeft="535.5,156.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,77"
+              Start="0,0"
+              End="0,69.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,69.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-99.8190234375,28.65234375,199.638046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="229,42"
+          Id="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS"
+          TopLeft="69.5,370.5" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_CASO_T2"
+          TopLeft="95.5,234.5" />
+        <EdgeLayout
+          Id="Package\DFT_LOAD_TBL_FACT_CASOS.Paths[Salida de entradas coincidentes de búsqueda1]"
+          TopLeft="436.5,255">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-169,0"
+              Start="0,0"
+              End="-161.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-161.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-180.5690234375,5,199.638046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_LOAD_TBL_FACT_CASOS.Paths[Salida de entradas coincidentes de búsqueda2]"
+          TopLeft="182.75,276.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,94"
+              Start="0,0"
+              End="0,86.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,86.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-99.8190234375,37.15234375,199.638046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_LOAD_TBL_FACT_CASOS\SRC_OLEDB_TBL_CASOS_POSITIVOS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_UBICACION_T0">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_PERSONA_T0">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_LOAD_TBL_FACT_CASOS\DST_OLEDB_TBL_FACT_CASOS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_LOAD_TBL_FACT_CASOS\LKP_DIM_CASO_T2">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

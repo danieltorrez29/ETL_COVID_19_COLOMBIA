@@ -11,8 +11,8 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="30"
-  DTS:VersionGUID="{787AD85D-9848-4FD6-A0E7-C9D5C07A7980}">
+  DTS:VersionBuild="31"
+  DTS:VersionGUID="{A518AF92-E352-4BAF-8A2E-A0628AD5210D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -903,97 +903,33 @@ ORDER BY EDAD;</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="257,42"
-          Id="Package\DFT_LOAD_DIM_PERSONA_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS"
-          TopLeft="52.5,28.5" />
-        <NodeLayout
-          Size="172,42"
-          Id="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CASTS"
-          TopLeft="95.5,107.5" />
-        <EdgeLayout
-          Id="Package\DFT_LOAD_DIM_PERSONA_T0.Paths[Salida de origen de OLE DB]"
-          TopLeft="181.25,70.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,37"
-              Start="0,0"
-              End="0,29.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
           Size="191,42"
           Id="Package\DFT_LOAD_DIM_PERSONA_T0\LKP_DIM_PERSONA_T0"
           TopLeft="91.5,194.5" />
-        <EdgeLayout
-          Id="Package\DFT_LOAD_DIM_PERSONA_T0.Paths[Salida de columna derivada]"
-          TopLeft="184.25,149.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,45"
-              Start="0,0"
-              End="0,37.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
           Size="249,42"
           Id="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_CS_ROUTE_DIM_PERSONA_T0"
           TopLeft="61,367" />
         <NodeLayout
-          Size="180,42"
-          Id="Package\DFT_LOAD_DIM_PERSONA_T0\AUD_RC_REPETIDOS"
-          TopLeft="507,373" />
-        <EdgeLayout
-          Id="Package\DFT_LOAD_DIM_PERSONA_T0.Paths[REPETIDO]"
-          TopLeft="310,391">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="197,0"
-              Start="0,0"
-              End="189.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="189.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="71.0971875,5,47.305625,9.5732421875"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="261,42"
+          Id="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CAST_CATEGORIA_EDAD"
+          TopLeft="52.5,288.5" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CASTS"
+          TopLeft="95.5,107.5" />
+        <NodeLayout
+          Size="257,42"
+          Id="Package\DFT_LOAD_DIM_PERSONA_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS"
+          TopLeft="52.5,28.5" />
         <NodeLayout
           Size="255,42"
           Id="Package\DFT_LOAD_DIM_PERSONA_T0\DST_OLEDB_TBL_DIM_PERSONA_T0"
           TopLeft="54.5,455.5" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\DFT_LOAD_DIM_PERSONA_T0\AUD_RC_REPETIDOS"
+          TopLeft="507,373" />
         <EdgeLayout
           Id="Package\DFT_LOAD_DIM_PERSONA_T0.Paths[NUEVO]"
           TopLeft="183.75,409">
@@ -1018,10 +954,28 @@ ORDER BY EDAD;</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="261,42"
-          Id="Package\DFT_LOAD_DIM_PERSONA_T0\TRF_DC_BK_CAST_CATEGORIA_EDAD"
-          TopLeft="52.5,288.5" />
+        <EdgeLayout
+          Id="Package\DFT_LOAD_DIM_PERSONA_T0.Paths[Salida de origen de OLE DB]"
+          TopLeft="181.25,70.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37"
+              Start="0,0"
+              End="0,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT_LOAD_DIM_PERSONA_T0.Paths[Salida de entradas coincidentes de búsqueda]"
           TopLeft="185,236.5">
@@ -1068,9 +1022,78 @@ ORDER BY EDAD;</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_LOAD_DIM_PERSONA_T0.Paths[Salida de columna derivada]"
+          TopLeft="184.25,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_LOAD_DIM_PERSONA_T0.Paths[REPETIDO]"
+          TopLeft="310,391">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="197,0"
+              Start="0,0"
+              End="189.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="189.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="71.0971875,5,47.305625,9.5732421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_LOAD_DIM_PERSONA_T0\LKP_DIM_PERSONA_T0">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\DFT_LOAD_DIM_PERSONA_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS">
     <Properties>
@@ -1081,29 +1104,6 @@ ORDER BY EDAD;</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT_LOAD_DIM_PERSONA_T0\LKP_DIM_PERSONA_T0">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
