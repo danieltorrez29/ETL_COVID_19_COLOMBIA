@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>ETL_COVID_19_COL</Name>
-    <LastWriteTime>2025-11-04T21:46:07.5010512Z</LastWriteTime>
+    <LastWriteTime>2025-11-04T23:27:12.1661274Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -18,7 +18,12 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>ETL_DIM_PERSONA_T0.dtsx</Name>
-      <LastWriteTime>2025-11-04T22:17:19.2685782Z</LastWriteTime>
+      <LastWriteTime>2025-11-05T00:20:52.1588863Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>ETL_DIM_CASO_T2.dtsx</Name>
+      <LastWriteTime>2025-11-05T00:31:30.5817127Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

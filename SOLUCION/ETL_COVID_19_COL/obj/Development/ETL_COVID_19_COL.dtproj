@@ -26,13 +26,14 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">VIVOBOOK-15</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvxiW7edABEuVnvb0yP5+MwAAAAACAAAAAAAQZgAAAAEAACAAAAAKgRc4zOjqWIhA2NkUH7fyf6NXAUwOvf79unUMDGy7yQAAAAAOgAAAAAIAACAAAACynG9IFqF2xWAxQwjUvxP13i4Y5RBHTgrPBJpsCSlTjZAAAABPzAiWyOiZb73t59EnOhGe22BnSXmNw1LTbIYcMS7gBxBIYangUM5zPh5Td0a05G41K4QvwzzhqRT73sdDyWkUoqCmf11DWqU2fAKQrrxZ4Uid3sQlpqKJ/u/5QEqsToed6JH0C66PuIP99oBsUmQIpHMx3JY4RBq1GYyfn2MTCTyC/mrGMvIBp3XUR0owK1JAAAAAAompB4BEWvxK6HyLA165dqqQ99A3k+HN6qyk4LCTUQu158W6qlC/kL5D1KzgSZ4EacyTRvrUjs6AEDelDJej+w==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvxiW7edABEuVnvb0yP5+MwAAAAACAAAAAAAQZgAAAAEAACAAAAAPo3OM630CWQWL2SCzYGAlYSlGhXMFmCC9LuBONYKe/wAAAAAOgAAAAAIAACAAAABJTBf/2UcFgTc5ArvpYAs356V7T1EIuaeTyVCzKXLrZZAAAADRIM2BUmjtbmtHGf0lL2f1Kci+51bRQkHWWprJXe3StlkVYxn+bEu+gyUbZ47AS37bHPaAbWaSNeMmkkmQ1wxfmbN4AhFNIR82HmJRw8LkJ6wypltJFoTonNDA7yRRq5+HXo53BnZGcqr0WZtDA8kSH9pvVmR4JxNmiBq91N7Gq8q+iAnBmZ5O0AVXAv7KiiBAAAAAvu1SMaotkK+cHaSreqjYs8/VOFYyi12wYC+QjAHS+POG8jGdxODsWoI6nQXvdz/ZMIxKtPaSDz354gFUTIU32Q==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
           <SSIS:Package SSIS:Name="ETL_DIM_UBICACION_T0.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="ETL_DIM_TIEMPO_T0.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="ETL_DIM_PERSONA_T0.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ETL_DIM_CASO_T2.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="CNX_OLEDB_DWH_COVID_19_COLOMBIA.conmgr" />
@@ -258,10 +259,27 @@
                 <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">22</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">30</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{72861CFD-FAB8-402A-A6E7-36F514C84786}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{787AD85D-9848-4FD6-A0E7-C9D5C07A7980}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ETL_DIM_CASO_T2.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{365FCD07-5F9D-47A0-BCD0-09CD1FA6DF48}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">32</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{5FBA5467-ED7D-45A5-8122-3E9731F4FFC9}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
