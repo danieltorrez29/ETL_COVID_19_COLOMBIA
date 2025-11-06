@@ -1,0 +1,590 @@
+{
+  "name": "CUBO_TABULAR_CASOS_COVID_19_COL",
+  "compatibilityLevel": 1400,
+  "model": {
+    "culture": "es-CO",
+    "dataSources": [
+      {
+        "type": "structured",
+        "name": "SQL/VIVOBOOK-15\\SQLSERVER;DWH_COVID_19_COLOMBIA",
+        "connectionDetails": {
+          "protocol": "tds",
+          "address": {
+            "server": "VIVOBOOK-15\\SQLSERVER",
+            "database": "DWH_COVID_19_COLOMBIA"
+          },
+          "authentication": null,
+          "query": null
+        },
+        "credential": {
+          "AuthenticationKind": "UsernamePassword",
+          "kind": "SQL",
+          "path": "vivobook-15\\sqlserver;DWH_COVID_19_COLOMBIA",
+          "Username": "COVID_19_COL",
+          "EncryptConnection": false
+        }
+      }
+    ],
+    "tables": [
+      {
+        "name": "TBL_DIM_CASO_T2",
+        "columns": [
+          {
+            "name": "SK_DIM_CASO",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "SK_DIM_CASO"
+          },
+          {
+            "name": "INT_ID_CASO",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "INT_ID_CASO"
+          },
+          {
+            "name": "STR_TIPO_CONTAGIO",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "STR_TIPO_CONTAGIO"
+          },
+          {
+            "name": "STR_UBICACION_CASO",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "STR_UBICACION_CASO"
+          },
+          {
+            "name": "STR_ESTADO",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "STR_ESTADO"
+          },
+          {
+            "name": "STR_CONDICION_FINAL",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "STR_CONDICION_FINAL"
+          },
+          {
+            "name": "STR_TIPO_RECUPERACION",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "STR_TIPO_RECUPERACION"
+          },
+          {
+            "name": "INT_FLAG",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "INT_FLAG"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/VIVOBOOK-15\\SQLSERVER;DWH_COVID_19_COLOMBIA\",",
+                "    dbo_TBL_DIM_CASO_T2 = Source{[Schema=\"dbo\",Item=\"TBL_DIM_CASO_T2\"]}[Data],",
+                "    #\"Uppercased Text\" = Table.TransformColumns(dbo_TBL_DIM_CASO_T2,{{\"STR_TIPO_CONTAGIO\", Text.Upper, type text}, {\"STR_UBICACION_CASO\", Text.Upper, type text}, {\"STR_ESTADO\", Text.Upper, type text}, {\"STR_CONDICION_FINAL\", Text.Upper, type text}, {\"STR_TIPO_RECUPERACION\", Text.Upper, type text}}),",
+                "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Uppercased Text\",{\"SK_DIM_CASO\", \"INT_ID_CASO\", \"STR_TIPO_CONTAGIO\", \"STR_UBICACION_CASO\", \"STR_ESTADO\", \"STR_CONDICION_FINAL\", \"STR_TIPO_RECUPERACION\", \"INT_FLAG\"})",
+                "in",
+                "    #\"Removed Other Columns\""
+              ]
+            }
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "INFO_CASO",
+            "levels": [
+              {
+                "name": "TIPO_CONTAGIO",
+                "ordinal": 1,
+                "column": "STR_TIPO_CONTAGIO"
+              },
+              {
+                "name": "UBICACION_CASO",
+                "ordinal": 2,
+                "column": "STR_UBICACION_CASO"
+              },
+              {
+                "name": "ESTADO",
+                "ordinal": 3,
+                "column": "STR_ESTADO"
+              },
+              {
+                "name": "CONDICION_FINAL",
+                "ordinal": 4,
+                "column": "STR_CONDICION_FINAL"
+              },
+              {
+                "name": "TIPO_RECUPERACION",
+                "ordinal": 5,
+                "column": "STR_TIPO_RECUPERACION"
+              },
+              {
+                "name": "ID_CASO",
+                "ordinal": 0,
+                "column": "INT_ID_CASO"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "TBL_DIM_PERSONA_T0",
+        "columns": [
+          {
+            "name": "SK_DIM_PERSONA",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "SK_DIM_PERSONA"
+          },
+          {
+            "name": "INT_EDAD",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "INT_EDAD"
+          },
+          {
+            "name": "STR_CATEGORIA_EDAD",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "STR_CATEGORIA_EDAD"
+          },
+          {
+            "name": "CHR_SEXO",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "CHR_SEXO"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/VIVOBOOK-15\\SQLSERVER;DWH_COVID_19_COLOMBIA\",",
+                "    dbo_TBL_DIM_PERSONA_T0 = Source{[Schema=\"dbo\",Item=\"TBL_DIM_PERSONA_T0\"]}[Data],",
+                "    #\"Removed Columns\" = Table.RemoveColumns(dbo_TBL_DIM_PERSONA_T0,{\"DT_FECHA_CARGUE\"})",
+                "in",
+                "    #\"Removed Columns\""
+              ]
+            }
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "PERSONA",
+            "levels": [
+              {
+                "name": "EDAD",
+                "ordinal": 0,
+                "column": "INT_EDAD"
+              },
+              {
+                "name": "CATEGORIA_EDAD",
+                "ordinal": 1,
+                "column": "STR_CATEGORIA_EDAD"
+              },
+              {
+                "name": "SEXO",
+                "ordinal": 2,
+                "column": "CHR_SEXO"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "TBL_DIM_TIEMPO_T0",
+        "columns": [
+          {
+            "name": "SK_DIM_TIEMPO",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "SK_DIM_TIEMPO"
+          },
+          {
+            "name": "DT_FECHA_NOTIFICACION",
+            "dataType": "dateTime",
+            "isHidden": true,
+            "sourceColumn": "DT_FECHA_NOTIFICACION"
+          },
+          {
+            "name": "INT_DIA",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "INT_DIA"
+          },
+          {
+            "name": "INT_MES",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "INT_MES"
+          },
+          {
+            "name": "INT_ANIO",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "INT_ANIO"
+          },
+          {
+            "name": "INT_PERIODO",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "INT_PERIODO"
+          },
+          {
+            "name": "INT_SEMANA_MES",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "INT_SEMANA_MES"
+          },
+          {
+            "name": "STR_MES",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "STR_MES"
+          },
+          {
+            "name": "STR_SEMESTRE",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "STR_SEMESTRE"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/VIVOBOOK-15\\SQLSERVER;DWH_COVID_19_COLOMBIA\",",
+                "    dbo_TBL_DIM_TIEMPO_T0 = Source{[Schema=\"dbo\",Item=\"TBL_DIM_TIEMPO_T0\"]}[Data],",
+                "    #\"Removed Columns\" = Table.RemoveColumns(dbo_TBL_DIM_TIEMPO_T0,{\"DT_FECHA_CARGUE\"})",
+                "in",
+                "    #\"Removed Columns\""
+              ]
+            }
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "TIEMPO",
+            "levels": [
+              {
+                "name": "FECHA_NOTIFICACION",
+                "ordinal": 0,
+                "column": "DT_FECHA_NOTIFICACION"
+              },
+              {
+                "name": "DIA_NUMERO",
+                "ordinal": 1,
+                "column": "INT_DIA"
+              },
+              {
+                "name": "MES_NUMERO",
+                "ordinal": 3,
+                "column": "INT_MES"
+              },
+              {
+                "name": "ANIO_NUMERO",
+                "ordinal": 7,
+                "column": "INT_ANIO"
+              },
+              {
+                "name": "PERIODO_NUMERO",
+                "ordinal": 5,
+                "column": "INT_PERIODO"
+              },
+              {
+                "name": "SEMANA_MES_NUMERO",
+                "ordinal": 2,
+                "column": "INT_SEMANA_MES"
+              },
+              {
+                "name": "NOMBRE_MES",
+                "ordinal": 4,
+                "column": "STR_MES"
+              },
+              {
+                "name": "NOMBRE_SEMESTRE",
+                "ordinal": 6,
+                "column": "STR_SEMESTRE"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "TBL_DIM_UBICACION_T0",
+        "columns": [
+          {
+            "name": "SK_DIM_UBICACION",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "SK_DIM_UBICACION"
+          },
+          {
+            "name": "STR_DEPARTAMENTO",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "STR_DEPARTAMENTO"
+          },
+          {
+            "name": "STR_MUNICIPIO",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "STR_MUNICIPIO"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/VIVOBOOK-15\\SQLSERVER;DWH_COVID_19_COLOMBIA\",",
+                "    dbo_TBL_DIM_UBICACION_T0 = Source{[Schema=\"dbo\",Item=\"TBL_DIM_UBICACION_T0\"]}[Data],",
+                "    #\"Removed Columns\" = Table.RemoveColumns(dbo_TBL_DIM_UBICACION_T0,{\"DT_FECHA_CARGUE\"})",
+                "in",
+                "    #\"Removed Columns\""
+              ]
+            }
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "UBICACION",
+            "levels": [
+              {
+                "name": "DEPARTAMENTO",
+                "ordinal": 0,
+                "column": "STR_DEPARTAMENTO"
+              },
+              {
+                "name": "MUNICIPIO",
+                "ordinal": 1,
+                "column": "STR_MUNICIPIO"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "TBL_FACT_CASOS",
+        "columns": [
+          {
+            "name": "SK_DIM_CASO",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "SK_DIM_CASO"
+          },
+          {
+            "name": "SK_DIM_PERSONA",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "SK_DIM_PERSONA"
+          },
+          {
+            "name": "SK_DIM_UBICACION",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "SK_DIM_UBICACION"
+          },
+          {
+            "name": "SK_DIM_TIEMPO",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "SK_DIM_TIEMPO"
+          },
+          {
+            "name": "BIT_RECUPERADO",
+            "dataType": "boolean",
+            "isHidden": true,
+            "sourceColumn": "BIT_RECUPERADO"
+          },
+          {
+            "name": "BIT_MUERTO",
+            "dataType": "boolean",
+            "isHidden": true,
+            "sourceColumn": "BIT_MUERTO"
+          },
+          {
+            "name": "INT_DIAS_REPORTE",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "INT_DIAS_REPORTE"
+          },
+          {
+            "name": "INT_DIAS_RETRASO_DIAGNOSTICO",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "INT_DIAS_RETRASO_DIAGNOSTICO"
+          },
+          {
+            "name": "INT_DIAS_RECUPERACION",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "INT_DIAS_RECUPERACION"
+          },
+          {
+            "name": "INT_DIAS_HASTA_MUERTE",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "INT_DIAS_HASTA_MUERTE"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/VIVOBOOK-15\\SQLSERVER;DWH_COVID_19_COLOMBIA\",",
+                "    dbo_TBL_FACT_CASOS = Source{[Schema=\"dbo\",Item=\"TBL_FACT_CASOS\"]}[Data],",
+                "    #\"Removed Columns\" = Table.RemoveColumns(dbo_TBL_FACT_CASOS,{\"DT_FECHA_CARGUE\"})",
+                "in",
+                "    #\"Removed Columns\""
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "PROMEDIO_DIAS_REPORTE",
+            "expression": "AVERAGE([INT_DIAS_REPORTE])",
+            "formatString": "0.0",
+            "displayFolder": "TIEMPO"
+          },
+          {
+            "name": "RECUPERADOS",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    COUNTROWS(TBL_FACT_CASOS),",
+              "    TBL_FACT_CASOS[BIT_RECUPERADO] = TRUE()",
+              ")"
+            ],
+            "displayFolder": "CANTIDAD"
+          },
+          {
+            "name": "MUERTOS",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    COUNTROWS(TBL_FACT_CASOS),",
+              "    TBL_FACT_CASOS[BIT_MUERTO] = TRUE()",
+              ")"
+            ],
+            "displayFolder": "CANTIDAD"
+          },
+          {
+            "name": "PROMEDIO_DIAS_RETRASO_DIAGNOSTICO",
+            "expression": "AVERAGE([INT_DIAS_RETRASO_DIAGNOSTICO])",
+            "formatString": "0.0",
+            "displayFolder": "TIEMPO"
+          },
+          {
+            "name": "PROMEDIO_DIAS_RECUPERACION",
+            "expression": "AVERAGE([INT_DIAS_RECUPERACION])",
+            "formatString": "0.0",
+            "displayFolder": "TIEMPO"
+          },
+          {
+            "name": "PROMEDIO_DIAS_HASTA_MUERTE",
+            "expression": "AVERAGE([INT_DIAS_HASTA_MUERTE])",
+            "formatString": "0.0",
+            "displayFolder": "TIEMPO"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "INFO_CASOS",
+            "levels": [
+              {
+                "name": "RECUPERADO",
+                "ordinal": 0,
+                "column": "BIT_RECUPERADO"
+              },
+              {
+                "name": "MUERTO",
+                "ordinal": 1,
+                "column": "BIT_MUERTO"
+              },
+              {
+                "name": "DIAS_REPORTE",
+                "ordinal": 2,
+                "column": "INT_DIAS_REPORTE"
+              },
+              {
+                "name": "DIAS_RETRASO_DIAGNOSTICO",
+                "ordinal": 3,
+                "column": "INT_DIAS_RETRASO_DIAGNOSTICO"
+              },
+              {
+                "name": "DIAS_RECUPERACION",
+                "ordinal": 4,
+                "column": "INT_DIAS_RECUPERACION"
+              },
+              {
+                "name": "DIAS_HASTA_MUERTE",
+                "ordinal": 5,
+                "column": "INT_DIAS_HASTA_MUERTE"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "14542611-0ade-45a4-bf2e-4b491b48fa1a",
+        "fromTable": "TBL_FACT_CASOS",
+        "fromColumn": "SK_DIM_CASO",
+        "toTable": "TBL_DIM_CASO_T2",
+        "toColumn": "SK_DIM_CASO"
+      },
+      {
+        "name": "b93a6a31-aef7-4de0-9c79-86df06fb04ae",
+        "fromTable": "TBL_FACT_CASOS",
+        "fromColumn": "SK_DIM_PERSONA",
+        "toTable": "TBL_DIM_PERSONA_T0",
+        "toColumn": "SK_DIM_PERSONA"
+      },
+      {
+        "name": "4efd66d7-aae2-482e-90e3-86401b8a7b0a",
+        "fromTable": "TBL_FACT_CASOS",
+        "fromColumn": "SK_DIM_UBICACION",
+        "toTable": "TBL_DIM_UBICACION_T0",
+        "toColumn": "SK_DIM_UBICACION"
+      },
+      {
+        "name": "cfee81fa-d6ac-49ed-8482-e912ccf8f9aa",
+        "fromTable": "TBL_FACT_CASOS",
+        "fromColumn": "SK_DIM_TIEMPO",
+        "toTable": "TBL_DIM_TIEMPO_T0",
+        "toColumn": "SK_DIM_TIEMPO"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "500"
+      }
+    ]
+  }
+}

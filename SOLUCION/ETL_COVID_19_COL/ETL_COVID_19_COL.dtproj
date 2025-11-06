@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">VIVOBOOK-15</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvxiW7edABEuVnvb0yP5+MwAAAAACAAAAAAAQZgAAAAEAACAAAAAoXoYaOVbLUyjzKOvgYPuqispwY1y8xZ6D6XVaR0GOLQAAAAAOgAAAAAIAACAAAAAWLiIpVhrW3Z34PqmXYtblv8XcTY5TxE6WJNfORVGouZAAAADBl6mf7IuabVYPM4gMDFpBdhkQgVn8IW8/SxRRQX7XdsP31DfjQy6ruZTaFaxnYLK3f3YFn1eSMSkzqlZnD4+MJQLpspy1FEe6HMX8eZtUMYuAExszW9KP22/ZMR5DbfBD2YV6BRz1XmuSvy5qYKlV9aUfZWAiFZkaah/rgpNVfkJAee21TATyiE7U8kygseVAAAAAO7osVhYyWlAN2aq87MDJAdMrnWYht3+KnGjQ7VTtF2E+VjwpeFMioxE0GQ6bgMZ0/xkFCW2Lcl5pNg3j4jycHA==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvxiW7edABEuVnvb0yP5+MwAAAAACAAAAAAAQZgAAAAEAACAAAAD8M+F9NScYc/NI2ozWk7uCt9puRcaQeHznsUAUPmDHYgAAAAAOgAAAAAIAACAAAADK/ZLuUacUSRFPt5yeYKF2s9bvLIiHHDXYPAAdEF++npAAAAAL/sRY6DqRu69m3KpqhAiJp0mmQiyb7lv6tqfmty44n6sUpgUTg3HJvSWFppEkkV4KfmV91iMHVZi9x7nEeBtvJ2aeVQ3/JaC0g32xPWLeV9sVq/Xs9TrzutDn7/HifEC8Eb84mhqbHqJ7Y+7fBCLlZrQ5Ui7c+S6/nKxjyMolyKsPpJ+n25T+s0FHZ+79L49AAAAAjo49ULoFlDtxTOrHXx/l5p+TB5stlLAYzGcM2fSi2cukqCwv7voR3lCiGDyJiFsq6eaEWF/pdeMZUbn3e1AGtw==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -35,6 +35,7 @@
           <SSIS:Package SSIS:Name="ETL_DIM_PERSONA_T0.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="ETL_DIM_CASO_T2.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="ETL_FACT_CASOS.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ETL_ORQUESTADOR.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="CNX_OLEDB_DWH_COVID_19_COLOMBIA.conmgr" />
@@ -260,10 +261,10 @@
                 <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">27</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">31</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{FFE5E104-AAB5-47AE-BB39-B55B85BA393C}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{A518AF92-E352-4BAF-8A2E-A0628AD5210D}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -294,16 +295,137 @@
                 <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">17</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{40CE0FB3-1EB4-4EF8-B60E-DF4659209B9C}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{11699FF3-9259-45C4-81E4-6DC65F917161}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
               </SSIS:Properties>
               <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ETL_ORQUESTADOR.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{958CFDDB-6361-40A0-A623-75BE80B8DC7E}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{821FE9EB-84D7-498B-87D9-80C85B264EC8}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters>
+                <SSIS:Parameter SSIS:Name="CM.VIVOBOOK-15\TABULAR_UPTC.CUBO_TABULAR_CASOS_COVID_19_COL.ConnectByProxy">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.VIVOBOOK-15\TABULAR_UPTC.CUBO_TABULAR_CASOS_COVID_19_COL.ConnectionString">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Data Source=VIVOBOOK-15\TABULAR_UPTC;Initial Catalog=CUBO_TABULAR_CASOS_COVID_19_COL;Provider=MSOLAP.8;Impersonation Level=Impersonate;</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.VIVOBOOK-15\TABULAR_UPTC.CUBO_TABULAR_CASOS_COVID_19_COL.InitialCatalog">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">CUBO_TABULAR_CASOS_COVID_19_COL</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.VIVOBOOK-15\TABULAR_UPTC.CUBO_TABULAR_CASOS_COVID_19_COL.Password">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">1</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.VIVOBOOK-15\TABULAR_UPTC.CUBO_TABULAR_CASOS_COVID_19_COL.RetainSameConnection">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.VIVOBOOK-15\TABULAR_UPTC.CUBO_TABULAR_CASOS_COVID_19_COL.ServerName">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">VIVOBOOK-15\TABULAR_UPTC</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.VIVOBOOK-15\TABULAR_UPTC.CUBO_TABULAR_CASOS_COVID_19_COL.UserName">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+              </SSIS:Parameters>
             </SSIS:PackageMetaData>
           </SSIS:PackageInfo>
         </SSIS:DeploymentInfo>

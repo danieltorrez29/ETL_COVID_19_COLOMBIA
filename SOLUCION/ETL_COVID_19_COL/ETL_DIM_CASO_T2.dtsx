@@ -11,8 +11,8 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="32"
-  DTS:VersionGUID="{5FBA5467-ED7D-45A5-8122-3E9731F4FFC9}">
+  DTS:VersionBuild="36"
+  DTS:VersionGUID="{A1E6C4BF-51AE-41A1-ABF4-7CE627F274AE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -1766,13 +1766,13 @@ where [refTable].[LLAVE_INSERT_D] = ?</property>
                           containsID="true"
                           dataType="System.String"
                           description="Expresión de columna derivada"
-                          name="Expression">#{Package\DFT_LOAD_DIM_CASO_T2\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[TIPO_CONTAGIO]} + #{Package\DFT_LOAD_DIM_CASO_T2\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[UBICACION_CASO]} + #{Package\DFT_LOAD_DIM_CASO_T2\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[ESTADO]} + #{Package\DFT_LOAD_DIM_CASO_T2\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[CONDICION_FINAL]} + #{Package\DFT_LOAD_DIM_CASO_T2\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[TIPO_RECUPERACION]}</property>
+                          name="Expression">#{Package\DFT_LOAD_DIM_CASO_T2\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[TIPO_CONTAGIO]} + #{Package\DFT_LOAD_DIM_CASO_T2\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[UBICACION_CASO]} + #{Package\DFT_LOAD_DIM_CASO_T2\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[ESTADO]} + #{Package\DFT_LOAD_DIM_CASO_T2\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[CONDICION_FINAL]} + ([ISNULL](#{Package\DFT_LOAD_DIM_CASO_T2\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[TIPO_RECUPERACION]}) ? "" : #{Package\DFT_LOAD_DIM_CASO_T2\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[TIPO_RECUPERACION]})</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Expresión descriptiva de columna derivada"
                           expressionType="Notify"
-                          name="FriendlyExpression">TIPO_CONTAGIO + UBICACION_CASO + ESTADO + CONDICION_FINAL + TIPO_RECUPERACION</property>
+                          name="FriendlyExpression">TIPO_CONTAGIO + UBICACION_CASO + ESTADO + CONDICION_FINAL + (ISNULL(TIPO_RECUPERACION) ? "" : TIPO_RECUPERACION)</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -2594,85 +2594,91 @@ where [refTable].[LLAVE_INSERT_D] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="257,42"
-          Id="Package\DFT_LOAD_DIM_CASO_T2\SRC_OLEDB_TBL_CASOS_POSITIVOS"
-          TopLeft="451.5,21.5" />
+          Size="166,42"
+          Id="Package\DFT_LOAD_DIM_CASO_T2\UNI_UNIR_CASOS"
+          TopLeft="507,603" />
+        <NodeLayout
+          Size="184,42"
+          Id="Package\DFT_LOAD_DIM_CASO_T2\TRF_DC_BK_CASTS_2"
+          TopLeft="862.5,474.5" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\DFT_LOAD_DIM_CASO_T2\TRF_DC_BK_CASTS"
+          TopLeft="492.5,205.5" />
+        <NodeLayout
+          Size="218,42"
+          Id="Package\DFT_LOAD_DIM_CASO_T2\DST_UPDATE_DIM_CASO_T2"
+          TopLeft="849,713" />
+        <NodeLayout
+          Size="235,42"
+          Id="Package\DFT_LOAD_DIM_CASO_T2\DST_OLEDB_TBL_DIM_CASO_T2"
+          TopLeft="467,720" />
+        <NodeLayout
+          Size="191,42"
+          Id="Package\DFT_LOAD_DIM_CASO_T2\MTC_REPLICAR_CASOS"
+          TopLeft="860.5,598.5" />
+        <NodeLayout
+          Size="251,42"
+          Id="Package\DFT_LOAD_DIM_CASO_T2\SRT_ORDENAR_POR_ID_CASO_ASC"
+          TopLeft="454.5,289.5" />
         <NodeLayout
           Size="235,42"
           Id="Package\DFT_LOAD_DIM_CASO_T2\DC_FILTRA_ID_CASO_NO_NULO"
           TopLeft="462.5,106.5" />
         <NodeLayout
           Size="172,42"
-          Id="Package\DFT_LOAD_DIM_CASO_T2\TRF_DC_BK_CASTS"
-          TopLeft="492.5,205.5" />
+          Id="Package\DFT_LOAD_DIM_CASO_T2\LKP_DIM_CASO_T2"
+          TopLeft="498.5,376.5" />
+        <NodeLayout
+          Size="265,42"
+          Id="Package\DFT_LOAD_DIM_CASO_T2\TRF_CS_NUEVO_VS_EXISTENTE_CASO"
+          TopLeft="451,475" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\DFT_LOAD_DIM_CASO_T2\AUD_RC_REPETIDOS"
+          TopLeft="142,474" />
+        <NodeLayout
+          Size="257,42"
+          Id="Package\DFT_LOAD_DIM_CASO_T2\SRC_OLEDB_TBL_CASOS_POSITIVOS"
+          TopLeft="451.5,21.5" />
         <EdgeLayout
-          Id="Package\DFT_LOAD_DIM_CASO_T2.Paths[NOT NULL]"
-          TopLeft="579.25,148.5">
+          Id="Package\DFT_LOAD_DIM_CASO_T2.Paths[UPDATE]"
+          TopLeft="716,495.75">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,57"
+              EndConnector="146.5,0"
               Start="0,0"
-              End="0,49.5">
+              End="139,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,49.5" />
+                    End="139,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-23.57193359375,19.96337890625,47.1438671875,9.5732421875"
+              BoundingBox="42.0133984375,5,54.973203125,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="251,42"
-          Id="Package\DFT_LOAD_DIM_CASO_T2\SRT_ORDENAR_POR_ID_CASO_ASC"
-          TopLeft="454.5,289.5" />
         <EdgeLayout
-          Id="Package\DFT_LOAD_DIM_CASO_T2.Paths[Salida de columna derivada]"
-          TopLeft="579.25,247.5">
+          Id="Package\DFT_LOAD_DIM_CASO_T2.Paths[Salida de Unión de todo 1]"
+          TopLeft="587.25,645">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42"
+              EndConnector="0,75"
               Start="0,0"
-              End="0,34.5">
+              End="0,67.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="172,42"
-          Id="Package\DFT_LOAD_DIM_CASO_T2\LKP_DIM_CASO_T2"
-          TopLeft="498.5,376.5" />
-        <EdgeLayout
-          Id="Package\DFT_LOAD_DIM_CASO_T2.Paths[Salida de ordenación]"
-          TopLeft="582.25,331.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,45"
-              Start="0,0"
-              End="0,37.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.5" />
+                    End="0,67.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2703,10 +2709,72 @@ where [refTable].[LLAVE_INSERT_D] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="265,42"
-          Id="Package\DFT_LOAD_DIM_CASO_T2\TRF_CS_NUEVO_VS_EXISTENTE_CASO"
-          TopLeft="451,475" />
+        <EdgeLayout
+          Id="Package\DFT_LOAD_DIM_CASO_T2.Paths[Salida de ordenación]"
+          TopLeft="582.25,331.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_LOAD_DIM_CASO_T2.Paths[Salida de multidifusión 1]"
+          TopLeft="860.5,621.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-187.5,0"
+              Start="0,0"
+              End="-180,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-180,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_LOAD_DIM_CASO_T2.Paths[Salida de Multidifusión 1]"
+          TopLeft="957,640.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,72.5"
+              Start="0,0"
+              End="0,65">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,65" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT_LOAD_DIM_CASO_T2.Paths[Salida de entradas coincidentes de búsqueda]"
           TopLeft="584,418.5">
@@ -2731,10 +2799,50 @@ where [refTable].[LLAVE_INSERT_D] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="180,42"
-          Id="Package\DFT_LOAD_DIM_CASO_T2\AUD_RC_REPETIDOS"
-          TopLeft="142,474" />
+        <EdgeLayout
+          Id="Package\DFT_LOAD_DIM_CASO_T2.Paths[Salida de columna derivada1]"
+          TopLeft="955.25,516.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,82"
+              Start="0,0"
+              End="0,74.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,74.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_LOAD_DIM_CASO_T2.Paths[Salida de columna derivada]"
+          TopLeft="579.25,247.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT_LOAD_DIM_CASO_T2.Paths[REPETIDO]"
           TopLeft="451,495.5">
@@ -2759,90 +2867,6 @@ where [refTable].[LLAVE_INSERT_D] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="184,42"
-          Id="Package\DFT_LOAD_DIM_CASO_T2\TRF_DC_BK_CASTS_2"
-          TopLeft="862.5,474.5" />
-        <EdgeLayout
-          Id="Package\DFT_LOAD_DIM_CASO_T2.Paths[UPDATE]"
-          TopLeft="716,495.75">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="146.5,0"
-              Start="0,0"
-              End="139,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="139,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="50.83810546875,5,37.3237890625,9.421875"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="191,42"
-          Id="Package\DFT_LOAD_DIM_CASO_T2\MTC_REPLICAR_CASOS"
-          TopLeft="860.5,598.5" />
-        <EdgeLayout
-          Id="Package\DFT_LOAD_DIM_CASO_T2.Paths[Salida de columna derivada1]"
-          TopLeft="955.25,516.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,82"
-              Start="0,0"
-              End="0,74.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,74.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="218,42"
-          Id="Package\DFT_LOAD_DIM_CASO_T2\DST_UPDATE_DIM_CASO_T2"
-          TopLeft="849,713" />
-        <EdgeLayout
-          Id="Package\DFT_LOAD_DIM_CASO_T2.Paths[Salida de Multidifusión 1]"
-          TopLeft="957,640.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,72.5"
-              Start="0,0"
-              End="0,65">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,65" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="166,42"
-          Id="Package\DFT_LOAD_DIM_CASO_T2\UNI_UNIR_CASOS"
-          TopLeft="507,603" />
         <EdgeLayout
           Id="Package\DFT_LOAD_DIM_CASO_T2.Paths[NUEVO]"
           TopLeft="586.75,517">
@@ -2868,51 +2892,27 @@ where [refTable].[LLAVE_INSERT_D] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT_LOAD_DIM_CASO_T2.Paths[Salida de multidifusión 1]"
-          TopLeft="860.5,621.75">
+          Id="Package\DFT_LOAD_DIM_CASO_T2.Paths[NOT NULL]"
+          TopLeft="579.25,148.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-187.5,0"
+              EndConnector="0,57"
               Start="0,0"
-              End="-180,0">
+              End="0,49.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-180,0" />
+                    End="0,49.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="235,42"
-          Id="Package\DFT_LOAD_DIM_CASO_T2\DST_OLEDB_TBL_DIM_CASO_T2"
-          TopLeft="467,720" />
-        <EdgeLayout
-          Id="Package\DFT_LOAD_DIM_CASO_T2.Paths[Salida de Unión de todo 1]"
-          TopLeft="587.25,645">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,75"
-              Start="0,0"
-              End="0,67.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,67.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-23.57193359375,19.96337890625,47.1438671875,9.5732421875"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2937,7 +2937,7 @@ where [refTable].[LLAVE_INSERT_D] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2947,7 +2947,7 @@ where [refTable].[LLAVE_INSERT_D] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

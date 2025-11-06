@@ -1,0 +1,7 @@
+D:\ETL\Bodega y Minería de Datos\ETL_COVID_19_COLOMBIA\SOLUCION\CUBO_TABULAR_CASOS_COVID_19_COL\bin\Model.asdatabase
+D:\ETL\Bodega y Minería de Datos\ETL_COVID_19_COLOMBIA\SOLUCION\CUBO_TABULAR_CASOS_COVID_19_COL\bin\Model.deploymenttargets
+D:\ETL\Bodega y Minería de Datos\ETL_COVID_19_COLOMBIA\SOLUCION\CUBO_TABULAR_CASOS_COVID_19_COL\bin\Model.deploymentoptions
+D:\ETL\Bodega y Minería de Datos\ETL_COVID_19_COLOMBIA\SOLUCION\CUBO_TABULAR_CASOS_COVID_19_COL\obj\Development\CUBO_TABULAR_CASOS_COVID_19_COL.smproj.CoreCompileInputs.cache
+D:\ETL\Bodega y Minería de Datos\ETL_COVID_19_COLOMBIA\SOLUCION\CUBO_TABULAR_CASOS_COVID_19_COL\obj\Development\Model.asdatabase
+D:\ETL\Bodega y Minería de Datos\ETL_COVID_19_COLOMBIA\SOLUCION\CUBO_TABULAR_CASOS_COVID_19_COL\obj\Development\Model.deploymentoptions
+D:\ETL\Bodega y Minería de Datos\ETL_COVID_19_COLOMBIA\SOLUCION\CUBO_TABULAR_CASOS_COVID_19_COL\obj\Development\Model.deploymenttargets
