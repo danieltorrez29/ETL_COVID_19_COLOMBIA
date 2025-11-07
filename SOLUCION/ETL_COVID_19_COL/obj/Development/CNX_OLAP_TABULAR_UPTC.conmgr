@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="CNX_OLAP_TABULAR_UPTC"
+  DTS:DTSID="{5C279956-994A-4EA3-A245-90AB8652112F}"
+  DTS:CreationName="MSOLAP100">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="0"
+      DTS:ConnectRetryInterval="0"
+      DTS:ConnectionString="Data Source=VIVOBOOK-15\TABULAR_UPTC;Initial Catalog=CUBO_TABULAR_CASOS_COVID_19_COL;Provider=MSOLAP.8;Impersonation Level=Impersonate;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

@@ -130,6 +130,11 @@
                 "name": "ID_CASO",
                 "ordinal": 0,
                 "column": "INT_ID_CASO"
+              },
+              {
+                "name": "FLAG",
+                "ordinal": 6,
+                "column": "INT_FLAG"
               }
             ]
           }
@@ -480,6 +485,7 @@
               "    TBL_FACT_CASOS[BIT_RECUPERADO] = TRUE()",
               ")"
             ],
+            "formatString": "#,##0",
             "displayFolder": "CANTIDAD"
           },
           {
@@ -491,6 +497,7 @@
               "    TBL_FACT_CASOS[BIT_MUERTO] = TRUE()",
               ")"
             ],
+            "formatString": "#,##0",
             "displayFolder": "CANTIDAD"
           },
           {
@@ -510,6 +517,24 @@
             "expression": "AVERAGE([INT_DIAS_HASTA_MUERTE])",
             "formatString": "0.0",
             "displayFolder": "TIEMPO"
+          },
+          {
+            "name": "TOTAL_CASOS_CON_ID",
+            "expression": "COUNTA([SK_DIM_CASO])",
+            "formatString": "#,##0",
+            "displayFolder": "CANTIDAD"
+          },
+          {
+            "name": "TOTAL_CASOS",
+            "expression": "COUNTROWS(TBL_FACT_CASOS)",
+            "formatString": "#,##0",
+            "displayFolder": "CANTIDAD"
+          },
+          {
+            "name": "TOTAL_CASOS_SIN_ID",
+            "expression": "COUNTROWS(TBL_FACT_CASOS)-COUNTA([SK_DIM_CASO])",
+            "formatString": "#,##0",
+            "displayFolder": "CANTIDAD"
           }
         ],
         "hierarchies": [

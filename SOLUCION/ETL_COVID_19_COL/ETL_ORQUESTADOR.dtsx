@@ -11,24 +11,10 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{821FE9EB-84D7-498B-87D9-80C85B264EC8}">
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{CBA27094-51E5-40B7-B63D-36FBE23885E6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
-  <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[VIVOBOOK-15\TABULAR_UPTC.CUBO_TABULAR_CASOS_COVID_19_COL]"
-      DTS:CreationName="MSOLAP100"
-      DTS:DTSID="{5C279956-994A-4EA3-A245-90AB8652112F}"
-      DTS:ObjectName="VIVOBOOK-15\TABULAR_UPTC.CUBO_TABULAR_CASOS_COVID_19_COL">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="0"
-          DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Data Source=VIVOBOOK-15\TABULAR_UPTC;Initial Catalog=CUBO_TABULAR_CASOS_COVID_19_COL;Provider=MSOLAP.8;Impersonation Level=Impersonate;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-  </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
@@ -177,18 +163,18 @@
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package\SEQ_PROCESS_CUBE\Analysis Services Processing Task"
+          DTS:refId="Package\SEQ_PROCESS_CUBE\AS_PROCESSFULL_CUBO_TABULAR_CASOS_COVID_19_COL"
           DTS:CreationName="Microsoft.DTSProcessingTask"
           DTS:Description="Analysis Services Processing Task"
           DTS:DTSID="{0FC85A37-FD8B-40E4-9A11-5F6053E806D8}"
           DTS:ExecutableType="Microsoft.DTSProcessingTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Analysis Services Processing Task"
+          DTS:ObjectName="AS_PROCESSFULL_CUBO_TABULAR_CASOS_COVID_19_COL"
           DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <ASProcessingData
-              ConnectionName="VIVOBOOK-15\TABULAR_UPTC.CUBO_TABULAR_CASOS_COVID_19_COL"
+              ConnectionName="CNX_OLAP_TABULAR_UPTC"
               ProcessingCommands="{&#xA;  &quot;sequence&quot;: {&#xA;    &quot;operations&quot;: [&#xA;      {&#xA;        &quot;refresh&quot;: {&#xA;          &quot;type&quot;: &quot;full&quot;,&#xA;          &quot;objects&quot;: [&#xA;            {&#xA;              &quot;database&quot;: &quot;CUBO_TABULAR_CASOS_COVID_19_COL&quot;,&#xA;              &quot;table&quot;: &quot;TBL_DIM_TIEMPO_T0&quot;&#xA;            }&#xA;          ]&#xA;        }&#xA;      },&#xA;      {&#xA;        &quot;refresh&quot;: {&#xA;          &quot;type&quot;: &quot;full&quot;,&#xA;          &quot;objects&quot;: [&#xA;            {&#xA;              &quot;database&quot;: &quot;CUBO_TABULAR_CASOS_COVID_19_COL&quot;,&#xA;              &quot;table&quot;: &quot;TBL_FACT_CASOS&quot;&#xA;            }&#xA;          ]&#xA;        }&#xA;      },&#xA;      {&#xA;        &quot;refresh&quot;: {&#xA;          &quot;type&quot;: &quot;full&quot;,&#xA;          &quot;objects&quot;: [&#xA;            {&#xA;              &quot;database&quot;: &quot;CUBO_TABULAR_CASOS_COVID_19_COL&quot;,&#xA;              &quot;table&quot;: &quot;TBL_DIM_UBICACION_T0&quot;&#xA;            }&#xA;          ]&#xA;        }&#xA;      },&#xA;      {&#xA;        &quot;refresh&quot;: {&#xA;          &quot;type&quot;: &quot;full&quot;,&#xA;          &quot;objects&quot;: [&#xA;            {&#xA;              &quot;database&quot;: &quot;CUBO_TABULAR_CASOS_COVID_19_COL&quot;,&#xA;              &quot;table&quot;: &quot;TBL_DIM_CASO_T2&quot;&#xA;            }&#xA;          ]&#xA;        }&#xA;      },&#xA;      {&#xA;        &quot;refresh&quot;: {&#xA;          &quot;type&quot;: &quot;full&quot;,&#xA;          &quot;objects&quot;: [&#xA;            {&#xA;              &quot;database&quot;: &quot;CUBO_TABULAR_CASOS_COVID_19_COL&quot;,&#xA;              &quot;table&quot;: &quot;TBL_DIM_PERSONA_T0&quot;&#xA;            }&#xA;          ]&#xA;        }&#xA;      }&#xA;    ]&#xA;  }&#xA;}" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -226,6 +212,14 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="172,42"
+          Id="Package\SEQ_DIMS\ETL_DIM_CASO_T2"
+          TopLeft="58.5,274.5" />
+        <NodeLayout
+          Size="191,42"
+          Id="Package\SEQ_DIMS\ETL_DIM_PERSONA_T0"
+          TopLeft="52.5,187.5" />
+        <NodeLayout
           Size="183,42"
           Id="Package\SEQ_DIMS\ETL_DIM_TIEMPO_T0"
           TopLeft="58.5,32.5" />
@@ -255,10 +249,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="191,42"
-          Id="Package\SEQ_DIMS\ETL_DIM_PERSONA_T0"
-          TopLeft="52.5,187.5" />
         <EdgeLayout
           Id="Package\SEQ_DIMS.PrecedenceConstraints[Constraint 1]"
           TopLeft="149,152.5">
@@ -281,10 +271,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="172,42"
-          Id="Package\SEQ_DIMS\ETL_DIM_CASO_T2"
-          TopLeft="58.5,274.5" />
         <EdgeLayout
           Id="Package\SEQ_DIMS.PrecedenceConstraints[Constraint 2]"
           TopLeft="146.25,229.5">
@@ -313,7 +299,7 @@
           PanelSize="298,350"
           Size="298,393"
           Id="Package\SEQ_DIMS"
-          TopLeft="49,38" />
+          TopLeft="61,34" />
         <NodeLayout
           Size="165,42"
           Id="Package\SEQ_FACT\ETL_FACT_CASOS"
@@ -324,21 +310,32 @@
           PanelSize="252,97"
           Size="252,140"
           Id="Package\SEQ_FACT"
-          TopLeft="443.5,157.5" />
+          TopLeft="432.5,157.5" />
+        <NodeLayout
+          Size="366,42"
+          Id="Package\SEQ_PROCESS_CUBE\AS_PROCESSFULL_CUBO_TABULAR_CASOS_COVID_19_COL"
+          TopLeft="9.5,24.5" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="380,93"
+          Size="380,136"
+          Id="Package\SEQ_PROCESS_CUBE"
+          TopLeft="762.5,161.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="347,231">
+          TopLeft="359,229">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="96.5,0"
+              EndConnector="73.5,0"
               Start="0,0"
-              End="89,0">
+              End="66,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="89,0" />
+                    End="66,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -347,31 +344,20 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="237,42"
-          Id="Package\SEQ_PROCESS_CUBE\Analysis Services Processing Task"
-          TopLeft="9.5,24.5" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="258,99"
-          Size="258,142"
-          Id="Package\SEQ_PROCESS_CUBE"
-          TopLeft="811.5,149.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="695.5,224">
+          TopLeft="684.5,228.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="116,0"
+              EndConnector="78,0"
               Start="0,0"
-              End="108.5,0">
+              End="70.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="108.5,0" />
+                    End="70.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -383,9 +369,5 @@
       </GraphLayout>
     </LayoutInfo>
   </Package>
-  <ConnectionManager
-    design-time-name="Package.ConnectionManagers[VIVOBOOK-15\TABULAR_UPTC.CUBO_TABULAR_CASOS_COVID_19_COL]">
-    <ProjectReferenceName></ProjectReferenceName>
-  </ConnectionManager>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
