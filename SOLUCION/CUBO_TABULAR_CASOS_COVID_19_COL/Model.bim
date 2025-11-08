@@ -77,6 +77,12 @@
             "dataType": "int64",
             "isHidden": true,
             "sourceColumn": "INT_FLAG"
+          },
+          {
+            "name": "DT_FECHA_REPORTE_WEB",
+            "dataType": "dateTime",
+            "isHidden": true,
+            "sourceColumn": "DT_FECHA_REPORTE_WEB"
           }
         ],
         "partitions": [
@@ -90,49 +96,50 @@
                 "    Source = #\"SQL/VIVOBOOK-15\\SQLSERVER;DWH_COVID_19_COLOMBIA\",",
                 "    dbo_TBL_DIM_CASO_T2 = Source{[Schema=\"dbo\",Item=\"TBL_DIM_CASO_T2\"]}[Data],",
                 "    #\"Uppercased Text\" = Table.TransformColumns(dbo_TBL_DIM_CASO_T2,{{\"STR_TIPO_CONTAGIO\", Text.Upper, type text}, {\"STR_UBICACION_CASO\", Text.Upper, type text}, {\"STR_ESTADO\", Text.Upper, type text}, {\"STR_CONDICION_FINAL\", Text.Upper, type text}, {\"STR_TIPO_RECUPERACION\", Text.Upper, type text}}),",
-                "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Uppercased Text\",{\"SK_DIM_CASO\", \"INT_ID_CASO\", \"STR_TIPO_CONTAGIO\", \"STR_UBICACION_CASO\", \"STR_ESTADO\", \"STR_CONDICION_FINAL\", \"STR_TIPO_RECUPERACION\", \"INT_FLAG\"})",
+                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Uppercased Text\",{\"DT_FECHA_CARGUE\", \"DT_FECHA_INICIO\", \"DT_FECHA_VIGENCIA\"}),",
+                "    #\"Capitalized Each Word\" = Table.TransformColumns(#\"Removed Columns\",{{\"STR_TIPO_CONTAGIO\", Text.Proper, type text}, {\"STR_UBICACION_CASO\", Text.Proper, type text}, {\"STR_ESTADO\", Text.Proper, type text}, {\"STR_CONDICION_FINAL\", Text.Proper, type text}, {\"STR_TIPO_RECUPERACION\", Text.Proper, type text}})",
                 "in",
-                "    #\"Removed Other Columns\""
+                "    #\"Capitalized Each Word\""
               ]
             }
           }
         ],
         "hierarchies": [
           {
-            "name": "INFO_CASO",
+            "name": "CASO",
             "levels": [
               {
-                "name": "TIPO_CONTAGIO",
+                "name": "Tipo de Contagio",
                 "ordinal": 1,
                 "column": "STR_TIPO_CONTAGIO"
               },
               {
-                "name": "UBICACION_CASO",
+                "name": "Ubicación de Caso",
                 "ordinal": 2,
                 "column": "STR_UBICACION_CASO"
               },
               {
-                "name": "ESTADO",
+                "name": "Estado",
                 "ordinal": 3,
                 "column": "STR_ESTADO"
               },
               {
-                "name": "CONDICION_FINAL",
+                "name": "Condición Final",
                 "ordinal": 4,
                 "column": "STR_CONDICION_FINAL"
               },
               {
-                "name": "TIPO_RECUPERACION",
+                "name": "Tipo de Recuperación",
                 "ordinal": 5,
                 "column": "STR_TIPO_RECUPERACION"
               },
               {
-                "name": "ID_CASO",
+                "name": "ID de Caso",
                 "ordinal": 0,
                 "column": "INT_ID_CASO"
               },
               {
-                "name": "FLAG",
+                "name": "Bandera de Caso Actualizado",
                 "ordinal": 6,
                 "column": "INT_FLAG"
               }
@@ -178,9 +185,10 @@
                 "let",
                 "    Source = #\"SQL/VIVOBOOK-15\\SQLSERVER;DWH_COVID_19_COLOMBIA\",",
                 "    dbo_TBL_DIM_PERSONA_T0 = Source{[Schema=\"dbo\",Item=\"TBL_DIM_PERSONA_T0\"]}[Data],",
-                "    #\"Removed Columns\" = Table.RemoveColumns(dbo_TBL_DIM_PERSONA_T0,{\"DT_FECHA_CARGUE\"})",
+                "    #\"Removed Columns\" = Table.RemoveColumns(dbo_TBL_DIM_PERSONA_T0,{\"DT_FECHA_CARGUE\"}),",
+                "    #\"Capitalized Each Word\" = Table.TransformColumns(#\"Removed Columns\",{{\"STR_CATEGORIA_EDAD\", Text.Proper, type text}})",
                 "in",
-                "    #\"Removed Columns\""
+                "    #\"Capitalized Each Word\""
               ]
             }
           }
@@ -190,17 +198,17 @@
             "name": "PERSONA",
             "levels": [
               {
-                "name": "EDAD",
+                "name": "Edad",
                 "ordinal": 0,
                 "column": "INT_EDAD"
               },
               {
-                "name": "CATEGORIA_EDAD",
+                "name": "Categoría de Edad",
                 "ordinal": 1,
                 "column": "STR_CATEGORIA_EDAD"
               },
               {
-                "name": "SEXO",
+                "name": "Sexo",
                 "ordinal": 2,
                 "column": "CHR_SEXO"
               }
@@ -276,9 +284,10 @@
                 "let",
                 "    Source = #\"SQL/VIVOBOOK-15\\SQLSERVER;DWH_COVID_19_COLOMBIA\",",
                 "    dbo_TBL_DIM_TIEMPO_T0 = Source{[Schema=\"dbo\",Item=\"TBL_DIM_TIEMPO_T0\"]}[Data],",
-                "    #\"Removed Columns\" = Table.RemoveColumns(dbo_TBL_DIM_TIEMPO_T0,{\"DT_FECHA_CARGUE\"})",
+                "    #\"Removed Columns\" = Table.RemoveColumns(dbo_TBL_DIM_TIEMPO_T0,{\"DT_FECHA_CARGUE\"}),",
+                "    #\"Capitalized Each Word\" = Table.TransformColumns(#\"Removed Columns\",{{\"STR_MES\", Text.Proper, type text}, {\"STR_SEMESTRE\", Text.Proper, type text}})",
                 "in",
-                "    #\"Removed Columns\""
+                "    #\"Capitalized Each Word\""
               ]
             }
           }
@@ -288,101 +297,44 @@
             "name": "TIEMPO",
             "levels": [
               {
-                "name": "FECHA_NOTIFICACION",
+                "name": "Fecha de Notificación",
                 "ordinal": 0,
                 "column": "DT_FECHA_NOTIFICACION"
               },
               {
-                "name": "DIA_NUMERO",
+                "name": "Número del Día",
                 "ordinal": 1,
                 "column": "INT_DIA"
               },
               {
-                "name": "MES_NUMERO",
+                "name": "Número del Mes",
                 "ordinal": 3,
                 "column": "INT_MES"
               },
               {
-                "name": "ANIO_NUMERO",
+                "name": "Número del Año",
                 "ordinal": 7,
                 "column": "INT_ANIO"
               },
               {
-                "name": "PERIODO_NUMERO",
+                "name": "Número del Periodo",
                 "ordinal": 5,
                 "column": "INT_PERIODO"
               },
               {
-                "name": "SEMANA_MES_NUMERO",
+                "name": "Número de la Semana del Mes",
                 "ordinal": 2,
                 "column": "INT_SEMANA_MES"
               },
               {
-                "name": "NOMBRE_MES",
+                "name": "Nombre del Mes",
                 "ordinal": 4,
                 "column": "STR_MES"
               },
               {
-                "name": "NOMBRE_SEMESTRE",
+                "name": "Nombre del Semestre",
                 "ordinal": 6,
                 "column": "STR_SEMESTRE"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "TBL_DIM_UBICACION_T0",
-        "columns": [
-          {
-            "name": "SK_DIM_UBICACION",
-            "dataType": "int64",
-            "isHidden": true,
-            "sourceColumn": "SK_DIM_UBICACION"
-          },
-          {
-            "name": "STR_DEPARTAMENTO",
-            "dataType": "string",
-            "isHidden": true,
-            "sourceColumn": "STR_DEPARTAMENTO"
-          },
-          {
-            "name": "STR_MUNICIPIO",
-            "dataType": "string",
-            "isHidden": true,
-            "sourceColumn": "STR_MUNICIPIO"
-          }
-        ],
-        "partitions": [
-          {
-            "name": "Partition",
-            "dataView": "full",
-            "source": {
-              "type": "m",
-              "expression": [
-                "let",
-                "    Source = #\"SQL/VIVOBOOK-15\\SQLSERVER;DWH_COVID_19_COLOMBIA\",",
-                "    dbo_TBL_DIM_UBICACION_T0 = Source{[Schema=\"dbo\",Item=\"TBL_DIM_UBICACION_T0\"]}[Data],",
-                "    #\"Removed Columns\" = Table.RemoveColumns(dbo_TBL_DIM_UBICACION_T0,{\"DT_FECHA_CARGUE\"})",
-                "in",
-                "    #\"Removed Columns\""
-              ]
-            }
-          }
-        ],
-        "hierarchies": [
-          {
-            "name": "UBICACION",
-            "levels": [
-              {
-                "name": "DEPARTAMENTO",
-                "ordinal": 0,
-                "column": "STR_DEPARTAMENTO"
-              },
-              {
-                "name": "MUNICIPIO",
-                "ordinal": 1,
-                "column": "STR_MUNICIPIO"
               }
             ]
           }
@@ -471,13 +423,13 @@
         ],
         "measures": [
           {
-            "name": "PROMEDIO_DIAS_REPORTE",
+            "name": "Promedio de Días de Duración de Reporte",
             "expression": "AVERAGE([INT_DIAS_REPORTE])",
             "formatString": "0.0",
             "displayFolder": "TIEMPO"
           },
           {
-            "name": "RECUPERADOS",
+            "name": "Recuperados",
             "expression": [
               "",
               "CALCULATE(",
@@ -489,7 +441,7 @@
             "displayFolder": "CANTIDAD"
           },
           {
-            "name": "MUERTOS",
+            "name": "Fallecidos",
             "expression": [
               "",
               "CALCULATE(",
@@ -501,37 +453,37 @@
             "displayFolder": "CANTIDAD"
           },
           {
-            "name": "PROMEDIO_DIAS_RETRASO_DIAGNOSTICO",
+            "name": "Promedio de Días de Retraso hasta Diagnóstico",
             "expression": "AVERAGE([INT_DIAS_RETRASO_DIAGNOSTICO])",
             "formatString": "0.0",
             "displayFolder": "TIEMPO"
           },
           {
-            "name": "PROMEDIO_DIAS_RECUPERACION",
+            "name": "Promedio de Días hasta Recuperación",
             "expression": "AVERAGE([INT_DIAS_RECUPERACION])",
             "formatString": "0.0",
             "displayFolder": "TIEMPO"
           },
           {
-            "name": "PROMEDIO_DIAS_HASTA_MUERTE",
+            "name": "Promedio de Días Hasta Fallecer",
             "expression": "AVERAGE([INT_DIAS_HASTA_MUERTE])",
             "formatString": "0.0",
             "displayFolder": "TIEMPO"
           },
           {
-            "name": "TOTAL_CASOS_CON_ID",
+            "name": "Total de Casos con ID",
             "expression": "COUNTA([SK_DIM_CASO])",
             "formatString": "#,##0",
             "displayFolder": "CANTIDAD"
           },
           {
-            "name": "TOTAL_CASOS",
+            "name": "Total de Casos",
             "expression": "COUNTROWS(TBL_FACT_CASOS)",
             "formatString": "#,##0",
             "displayFolder": "CANTIDAD"
           },
           {
-            "name": "TOTAL_CASOS_SIN_ID",
+            "name": "Total de Casos sin ID",
             "expression": "COUNTROWS(TBL_FACT_CASOS)-COUNTA([SK_DIM_CASO])",
             "formatString": "#,##0",
             "displayFolder": "CANTIDAD"
@@ -539,37 +491,117 @@
         ],
         "hierarchies": [
           {
-            "name": "INFO_CASOS",
+            "name": "CASOS",
             "levels": [
               {
-                "name": "RECUPERADO",
+                "name": "Recuperado",
                 "ordinal": 0,
                 "column": "BIT_RECUPERADO"
               },
               {
-                "name": "MUERTO",
+                "name": "Fallecido",
                 "ordinal": 1,
                 "column": "BIT_MUERTO"
               },
               {
-                "name": "DIAS_REPORTE",
+                "name": "Días de Duración de Reporte",
                 "ordinal": 2,
                 "column": "INT_DIAS_REPORTE"
               },
               {
-                "name": "DIAS_RETRASO_DIAGNOSTICO",
+                "name": "Días de Retraso hasta Diagnóstico",
                 "ordinal": 3,
                 "column": "INT_DIAS_RETRASO_DIAGNOSTICO"
               },
               {
-                "name": "DIAS_RECUPERACION",
+                "name": "Días hasta Recuperación",
                 "ordinal": 4,
                 "column": "INT_DIAS_RECUPERACION"
               },
               {
-                "name": "DIAS_HASTA_MUERTE",
+                "name": "Días hasta Fallecer",
                 "ordinal": 5,
                 "column": "INT_DIAS_HASTA_MUERTE"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "TBL_DIM_UBICACION_T0",
+        "columns": [
+          {
+            "name": "SK_DIM_UBICACION",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "SK_DIM_UBICACION"
+          },
+          {
+            "name": "STR_DEPARTAMENTO",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "STR_DEPARTAMENTO"
+          },
+          {
+            "name": "STR_MUNICIPIO",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "STR_MUNICIPIO"
+          },
+          {
+            "name": "STR_UBICACION_DEPARTAMENTO",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "STR_UBICACION_DEPARTAMENTO"
+          },
+          {
+            "name": "STR_UBICACION_MUNICIPIO",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "STR_UBICACION_MUNICIPIO"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/VIVOBOOK-15\\SQLSERVER;DWH_COVID_19_COLOMBIA\",",
+                "    dbo_TBL_DIM_UBICACION_T0 = Source{[Schema=\"dbo\",Item=\"TBL_DIM_UBICACION_T0\"]}[Data],",
+                "    #\"Removed Columns\" = Table.RemoveColumns(dbo_TBL_DIM_UBICACION_T0,{\"DT_FECHA_CARGUE\"}),",
+                "    #\"Capitalized Each Word\" = Table.TransformColumns(#\"Removed Columns\",{{\"STR_DEPARTAMENTO\", Text.Proper, type text}, {\"STR_MUNICIPIO\", Text.Proper, type text}, {\"STR_UBICACION_DEPARTAMENTO\", Text.Proper, type text}, {\"STR_UBICACION_MUNICIPIO\", Text.Proper, type text}})",
+                "in",
+                "    #\"Capitalized Each Word\""
+              ]
+            }
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "UBICACIÓN",
+            "levels": [
+              {
+                "name": "Ubicación del Departamento",
+                "ordinal": 2,
+                "column": "STR_UBICACION_DEPARTAMENTO"
+              },
+              {
+                "name": "Ubicación del Municipio",
+                "ordinal": 3,
+                "column": "STR_UBICACION_MUNICIPIO"
+              },
+              {
+                "name": "Municipio",
+                "ordinal": 1,
+                "column": "STR_MUNICIPIO"
+              },
+              {
+                "name": "Departamento",
+                "ordinal": 0,
+                "column": "STR_DEPARTAMENTO"
               }
             ]
           }
@@ -592,18 +624,18 @@
         "toColumn": "SK_DIM_PERSONA"
       },
       {
-        "name": "4efd66d7-aae2-482e-90e3-86401b8a7b0a",
-        "fromTable": "TBL_FACT_CASOS",
-        "fromColumn": "SK_DIM_UBICACION",
-        "toTable": "TBL_DIM_UBICACION_T0",
-        "toColumn": "SK_DIM_UBICACION"
-      },
-      {
         "name": "cfee81fa-d6ac-49ed-8482-e912ccf8f9aa",
         "fromTable": "TBL_FACT_CASOS",
         "fromColumn": "SK_DIM_TIEMPO",
         "toTable": "TBL_DIM_TIEMPO_T0",
         "toColumn": "SK_DIM_TIEMPO"
+      },
+      {
+        "name": "bc68ecbc-989c-4755-92cc-833789fc77d8",
+        "fromTable": "TBL_FACT_CASOS",
+        "fromColumn": "SK_DIM_UBICACION",
+        "toTable": "TBL_DIM_UBICACION_T0",
+        "toColumn": "SK_DIM_UBICACION"
       }
     ],
     "annotations": [

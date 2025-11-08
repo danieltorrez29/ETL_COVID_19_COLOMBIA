@@ -11,8 +11,8 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="26"
-  DTS:VersionGUID="{012FD0CC-77AF-42AC-AE5F-C10498B66D39}">
+  DTS:VersionBuild="30"
+  DTS:VersionGUID="{7F499728-A9D8-477C-864A-1F75667145CB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -162,6 +162,20 @@
                       cachedName="NOMBRE_MUNICIPIO"
                       externalMetadataColumnId="Package\DFT_LOAD_DIM_UBICACION_T0\DST_OLEDB_TBL_DIM_UBICACION_T0.Inputs[Entrada de destino de OLE DB].ExternalColumns[STR_MUNICIPIO]"
                       lineageId="Package\DFT_LOAD_DIM_UBICACION_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[NOMBRE_MUNICIPIO]" />
+                    <inputColumn
+                      refId="Package\DFT_LOAD_DIM_UBICACION_T0\DST_OLEDB_TBL_DIM_UBICACION_T0.Inputs[Entrada de destino de OLE DB].Columns[STR_UBICACION_DEPARTAMENTO]"
+                      cachedDataType="wstr"
+                      cachedLength="60"
+                      cachedName="STR_UBICACION_DEPARTAMENTO"
+                      externalMetadataColumnId="Package\DFT_LOAD_DIM_UBICACION_T0\DST_OLEDB_TBL_DIM_UBICACION_T0.Inputs[Entrada de destino de OLE DB].ExternalColumns[STR_UBICACION_DEPARTAMENTO]"
+                      lineageId="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada].Columns[STR_UBICACION_DEPARTAMENTO]" />
+                    <inputColumn
+                      refId="Package\DFT_LOAD_DIM_UBICACION_T0\DST_OLEDB_TBL_DIM_UBICACION_T0.Inputs[Entrada de destino de OLE DB].Columns[STR_UBICACION_MUNICIPIO]"
+                      cachedDataType="wstr"
+                      cachedLength="112"
+                      cachedName="STR_UBICACION_MUNICIPIO"
+                      externalMetadataColumnId="Package\DFT_LOAD_DIM_UBICACION_T0\DST_OLEDB_TBL_DIM_UBICACION_T0.Inputs[Entrada de destino de OLE DB].ExternalColumns[STR_UBICACION_MUNICIPIO]"
+                      lineageId="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada].Columns[STR_UBICACION_MUNICIPIO]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -183,6 +197,16 @@
                       refId="Package\DFT_LOAD_DIM_UBICACION_T0\DST_OLEDB_TBL_DIM_UBICACION_T0.Inputs[Entrada de destino de OLE DB].ExternalColumns[DT_FECHA_CARGUE]"
                       dataType="dbTimeStamp"
                       name="DT_FECHA_CARGUE" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_LOAD_DIM_UBICACION_T0\DST_OLEDB_TBL_DIM_UBICACION_T0.Inputs[Entrada de destino de OLE DB].ExternalColumns[STR_UBICACION_DEPARTAMENTO]"
+                      dataType="wstr"
+                      length="100"
+                      name="STR_UBICACION_DEPARTAMENTO" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_LOAD_DIM_UBICACION_T0\DST_OLEDB_TBL_DIM_UBICACION_T0.Inputs[Entrada de destino de OLE DB].ExternalColumns[STR_UBICACION_MUNICIPIO]"
+                      dataType="wstr"
+                      length="150"
+                      name="STR_UBICACION_MUNICIPIO" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -672,6 +696,52 @@ FROM  [DWH_COVID_19_COLOMBIA].[dbo].[TBL_CASOS_POSITIVOS];</property>
                           description="Expresión descriptiva de columna derivada"
                           expressionType="Notify"
                           name="FriendlyExpression">NOMBRE_DEPARTAMENTO + NOMBRE_MUNICIPIO</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada].Columns[STR_UBICACION_DEPARTAMENTO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Cálculo"
+                      errorRowDisposition="FailComponent"
+                      length="60"
+                      lineageId="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada].Columns[STR_UBICACION_DEPARTAMENTO]"
+                      name="STR_UBICACION_DEPARTAMENTO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión de columna derivada"
+                          name="Expression">#{Package\DFT_LOAD_DIM_UBICACION_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[NOMBRE_DEPARTAMENTO]} + ", COLOMBIA"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión descriptiva de columna derivada"
+                          expressionType="Notify"
+                          name="FriendlyExpression">NOMBRE_DEPARTAMENTO + ", COLOMBIA"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada].Columns[STR_UBICACION_MUNICIPIO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Cálculo"
+                      errorRowDisposition="FailComponent"
+                      length="112"
+                      lineageId="Package\DFT_LOAD_DIM_UBICACION_T0\TRF_DC_BK_CASTS.Outputs[Salida de columna derivada].Columns[STR_UBICACION_MUNICIPIO]"
+                      name="STR_UBICACION_MUNICIPIO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión de columna derivada"
+                          name="Expression">#{Package\DFT_LOAD_DIM_UBICACION_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[NOMBRE_MUNICIPIO]} + ", " + #{Package\DFT_LOAD_DIM_UBICACION_T0\SRC_OLEDB_TBL_CASOS_POSITIVOS.Outputs[Salida de origen de OLE DB].Columns[NOMBRE_DEPARTAMENTO]} + ", COLOMBIA"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión descriptiva de columna derivada"
+                          expressionType="Notify"
+                          name="FriendlyExpression">NOMBRE_MUNICIPIO + ", " + NOMBRE_DEPARTAMENTO + ", COLOMBIA"</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
